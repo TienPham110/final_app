@@ -11,7 +11,7 @@ default: &default
   username: root
   password: 1
   host: localhost
-  database: test
+  database: fotobook
 development:
   <<: *default
   # database: db/development.mysql

@@ -10,25 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_020613) do
+ActiveRecord::Schema.define(version: 2020_08_19_144137) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "shared"
+    t.boolean "shared", default: true
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
-  end
-
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.bigint "article_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -36,16 +27,19 @@ ActiveRecord::Schema.define(version: 2020_08_18_020613) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "shared"
+    t.boolean "shared", default: true
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "name"
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "firstName"
+    t.string "lastName"
+    t.string "email"
+    t.string "password"
   end
 
   add_foreign_key "albums", "users"
