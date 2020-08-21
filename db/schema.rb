@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_144137) do
+ActiveRecord::Schema.define(version: 2020_08_21_064504) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2020_08_19_144137) do
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
+  create_table "albums_photos", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "album_id", null: false
+    t.bigint "photo_id", null: false
+    t.index ["album_id", "photo_id"], name: "index_albums_photos_on_album_id_and_photo_id"
+    t.index ["photo_id", "album_id"], name: "index_albums_photos_on_photo_id_and_album_id"
+  end
+
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -30,6 +37,13 @@ ActiveRecord::Schema.define(version: 2020_08_19_144137) do
     t.boolean "shared", default: true
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
+  create_table "photos_albums", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "album_id"
+    t.bigint "photo_id"
+    t.index ["album_id"], name: "index_photos_albums_on_album_id"
+    t.index ["photo_id"], name: "index_photos_albums_on_photo_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -43,5 +57,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_144137) do
   end
 
   add_foreign_key "albums", "users"
+  add_foreign_key "albums_photos", "albums"
+  add_foreign_key "albums_photos", "photos"
   add_foreign_key "photos", "users"
 end
