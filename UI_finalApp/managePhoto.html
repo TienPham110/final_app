@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-dark navbar-expand-lg justify-content-between py-lg-0" style="background-color: #3c5a9a">
+                    <nav class="navbar w-75 justify-content-start mx-lg-5" >
+                        <a class="navbar-brand font-weight-bold mx-lg-4 " href="#">Fotobook Admin</a>
+                    <form class="form-inline w-50" >
+                        <input class="form-control w-100" type="search" placeholder="Search Photo / Album" aria-label="Search">
+                    </form>
+                    </nav>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item px-sm-2">
+                                <a href="#" class="nav-link">
+                                    <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzFoduz8sVaT-9UmdS4b7iUdt1msFeu8xm6Q&usqp=CAU" style="height: 40px; width:40px">
+                                </a>
+                            </li>
+                            <li class="nav-item py-xl-2 py-sm-1">
+                                <input class="btn btn-default active font-weight-bold h-100 btn_log" type="button" value="Pham Tien" >
+                            </li>
+                            <li class="nav-item py-xl-2 py-sm-1">
+                                <input class="btn btn-default active font-weight-bold mx-lg-5 h-100 btn_log" type="button" value="Logout">
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row w-100 my-2" ></div>
+        <div class="row">
+            <div class="col my-1 p-0  text-center text-xl-left">
+                <div class="btn-group-toggle mx-5" data-toggle="buttons">
+                    <label class="btn font-weight-bold active feed_left">
+                        <input type="radio"  name="options" id="option1" autocomplete="off" checked> Manage Photos
+                    </label> <br>
+                    <label class="btn font-weight-bold feed_left">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Manage Albums
+                    </label>
+                    <label class="btn font-weight-bold feed_left">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Manage Users
+                    </label>
+                </div>          
+            </div>
+            <div class="col-xl-8 py-3 photo_feed_container">
+                <div class="row justify-content-start flex px-2">
+                    
+                    <div class="col-md-6 col-xl-2 p-0 m-3  photo_tab manage-item">
+                        <img src="https://listdalat.com/wp-content/uploads/2019/06/khach-san-co-view-lang-mang-nhat-da-lat-gia-phong-duoi-1-trieudem-37515-1.jpg" alt="album" class="manage-image">                        
+                        <div class="top-left p-1 d-flex justify-content-between">
+                            <span>adasda asdadas a</span>
+                            <i class="fa fa-edit" style="font-size:1rem"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-2 p-0 m-3  photo_tab manage-item">
+                        <img src="https://listdalat.com/wp-content/uploads/2019/06/khach-san-co-view-lang-mang-nhat-da-lat-gia-phong-duoi-1-trieudem-37515-1.jpg" alt="album" class="manage-image">                        
+                        <div class="top-left p-1 d-flex justify-content-between">
+                            <span>adasda asdadas a</span>
+                            <i class="fa fa-edit" style="font-size:1rem"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-2 p-0 m-3  photo_tab manage-item">
+                        <img src="https://listdalat.com/wp-content/uploads/2019/06/khach-san-co-view-lang-mang-nhat-da-lat-gia-phong-duoi-1-trieudem-37515-1.jpg" alt="album" class="manage-image">                        
+                        <div class="top-left p-1 d-flex justify-content-between">
+                            <span>adasda asdadas a</span>
+                            <i class="fa fa-edit" style="font-size:1rem"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-2 p-0 m-3  photo_tab manage-item">
+                        <img src="https://listdalat.com/wp-content/uploads/2019/06/khach-san-co-view-lang-mang-nhat-da-lat-gia-phong-duoi-1-trieudem-37515-1.jpg" alt="album" class="manage-image">                        
+                        <div class="top-left p-1 d-flex justify-content-between">
+                            <span>adasda asdadas a</span>
+                            <i class="fa fa-edit" style="font-size:1rem"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-2 p-0 m-3  photo_tab manage-item">
+                        <img src="https://listdalat.com/wp-content/uploads/2019/06/khach-san-co-view-lang-mang-nhat-da-lat-gia-phong-duoi-1-trieudem-37515-1.jpg" alt="album" class="manage-image">                        
+                        <div class="top-left p-1 d-flex justify-content-between">
+                            <span>adasda asdadas a</span>
+                            <i class="fa fa-edit" style="font-size:1rem"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-2 p-0 m-3  photo_tab manage-item">
+                        <img src="https://listdalat.com/wp-content/uploads/2019/06/khach-san-co-view-lang-mang-nhat-da-lat-gia-phong-duoi-1-trieudem-37515-1.jpg" alt="album" class="manage-image">                        
+                        <div class="top-left p-1 d-flex justify-content-between">
+                            <span>adasda asdadas a</span>
+                            <i class="fa fa-edit" style="font-size:1rem"></i>
+                        </div>
+                    </div>
+
+                    
+                </div> 
+                <div class="row w-100" style="height:500px" ></div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col p-0 m-0"></div>
+            
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+     
+      
+</body> 
+<script src="js.js"></script>
+</html>
