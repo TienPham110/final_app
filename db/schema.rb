@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_064504) do
+ActiveRecord::Schema.define(version: 2020_08_24_163942) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2020_08_21_064504) do
     t.index ["photo_id", "album_id"], name: "index_albums_photos_on_photo_id_and_album_id"
   end
 
+  create_table "follows", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "follower_id"
+    t.bigint "followed_user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "time"
+  end
+
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -36,6 +44,10 @@ ActiveRecord::Schema.define(version: 2020_08_21_064504) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "shared", default: true
     t.bigint "user_id", null: false
+    t.integer "like"
+    t.string "photoFileName"
+    t.bigint "photoFileSize"
+    t.string "photoType"
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
@@ -54,6 +66,10 @@ ActiveRecord::Schema.define(version: 2020_08_21_064504) do
     t.string "lastName"
     t.string "email"
     t.string "password"
+    t.datetime "lastLogin"
+    t.string "avatarFileName"
+    t.bigint "avatarFileSize"
+    t.string "avatarType"
   end
 
   add_foreign_key "albums", "users"

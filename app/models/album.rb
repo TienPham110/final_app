@@ -8,8 +8,8 @@ class Album < ApplicationRecord
     
     private
         def check_if_album_has_a_description
-            if description.blank?
-                self.description = "This is a album of user has id #{user_id}"
+            if title.blank?
+                self.title = "This is a album of user has id #{user_id}"
             end
         end
 end
