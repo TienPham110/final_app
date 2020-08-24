@@ -346,11 +346,15 @@ img{
 
 
 
+.following{
+    background-color :yellow;
+    color: #0f0404;
+}
 
-
-
-
-
+.unfollowed{
+    background-color: white!important;
+    color: yellow!important;
+}
 
 .visually-hidden {
     position: absolute !important;
@@ -456,6 +460,7 @@ img{
 .btn_unfollow label{
     border-radius: 10px;
     width: 100%;
+    font-weight: bold;
 }
 
 .num_my_follow {
