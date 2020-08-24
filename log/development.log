@@ -5761,3 +5761,7 @@ FOREIGN KEY (`photo_id`)
   [1m[36mAlbum::HABTM_Photos Destroy (0.5ms)[0m  [1m[31mDELETE FROM `albums_photos` WHERE `albums_photos`.`album_id` = 4[0m
   [1m[36mAlbum Destroy (0.9ms)[0m  [1m[31mDELETE FROM `albums` WHERE `albums`.`id` = 4[0m
   [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (12.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (firstName ~= 'Tien' AND id >= 5) LIMIT 11[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (firstName ~= 'Tien' AND id >= 5) LIMIT 11[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (id <= 8 AND id >= 5) LIMIT 11[0m
