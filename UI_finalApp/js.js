@@ -78,6 +78,27 @@ $(document).ready(function() {
     })
 
 })
+$(document).ready(function() {
+  var index
+  $('.photo_item .photo_tab_album').click(function(){
+    photo_item = $(this).parent().parent().parent().parent().parent().parent()
+    index = photo_item.index()
+    console.log("a")
+    src = $("img:first-child",this).attr("src")
+      title = $(".title").map(function(){
+        return $(this).text()
+      })
+      description = $(".description").map(function(){
+        return $(this).text()
+      })
+      $("#myModal").modal("show")
+      $("#photoModal").attr("src",src)
+      $("#myModalLabel").text(title[index])
+      $("#myModalDescription").text(description[index])
+      console.log(src)
+    })
+
+})
 $(document).ready(function(){
   $(".btn_discovery_follow label").click(function(){
     if($(this).hasClass("following")){
