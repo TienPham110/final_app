@@ -37,6 +37,14 @@ Album.find_by(user_id:2).description
 User.find_by(user_id:2).firstName
 User.find_by(user_id:2).lastName
 
+#get number of like of photo 
+
+Photo.first.likes.count
+
+#get number of album of photo 
+
+Album.first.likes.count
+
 
 #######################Dicovery#########################
 
@@ -76,6 +84,14 @@ Album.find_by(user_id:2).description
 
 User.find_by(user_id:2).firstName
 User.find_by(user_id:2).lastName
+
+#get number of like of photo 
+
+Photo.first.likes.count
+
+#get number of album of photo 
+
+Album.first.likes.count
 
 #######################TabPhotos########################
 

@@ -74,7 +74,7 @@ $(document).ready(function() {
       $("#photoModal").attr("src",src)
       $("#myModalLabel").text(title[index])
       $("#myModalDescription").text(description[index])
-      console.log(src)
+      console.log(title)
     })
 
 })

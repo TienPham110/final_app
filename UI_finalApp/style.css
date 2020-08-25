@@ -100,7 +100,7 @@ ul{
 }
 .photo_feed_avatar img{
     max-width: 100%;
-    min-height: 175px;
+    min-height: 225px;
     border-radius: 5px 0px 0px 5px;
     box-shadow: 0px 1px 3px #AAA;
 }
@@ -303,6 +303,7 @@ img{
     width: 1.5rem;
     height: 1.5rem;
     z-index: 2;
+    color: rgb(240, 197, 197);
 }
 
 .fa-clone,

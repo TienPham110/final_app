@@ -6001,3 +6001,92 @@ Migrating to AddImageToPhotos (20200824163942)
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1000[0m
   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` LIMIT 11[0m
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (4.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('3829567845579155715', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateLikes (20200825042715)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('3829567845579155715')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('3829567845579155715', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateLikes (20200825044114)
+  [1m[35m (35.6ms)[0m  [1m[35mCREATE TABLE `likes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `photo_id` bigint NOT NULL, `album_id` bigint NOT NULL,  INDEX `index_likes_on_user_id`  (`user_id`),  INDEX `index_likes_on_photo_id`  (`photo_id`),  INDEX `index_likes_on_album_id`  (`album_id`), CONSTRAINT `fk_rails_1e09b5dabf`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_42d246f2ea`
+FOREIGN KEY (`photo_id`)
+  REFERENCES `photos` (`id`)
+, CONSTRAINT `fk_rails_7c8e82f6e0`
+FOREIGN KEY (`album_id`)
+  REFERENCES `albums` (`id`)
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200825044114')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDetailToLikes (20200825044433)
+  [1m[35m (57.5ms)[0m  [1m[35mALTER TABLE `likes` ADD `likeType` varchar(255)[0m
+  [1m[35m (62.1ms)[0m  [1m[35mALTER TABLE `likes` ADD `like_id` bigint[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200825044433')[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('3829567845579155715')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('3829567845579155715', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveRefFromLikes (20200825050408)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('3829567845579155715')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('3829567845579155715', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveRefFromLikes (20200825050408)
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE `likes` DROP COLUMN `photo_id_id`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('3829567845579155715')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('3829567845579155715', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveRefFromLikes (20200825050408)
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE `likes` DROP FOREIGN KEY fk_rails_42d246f2ea[0m
+  [1m[35m (52.9ms)[0m  [1m[35mALTER TABLE `likes` DROP COLUMN `photo_id`[0m
+  [1m[35m (9.8ms)[0m  [1m[35mALTER TABLE `likes` DROP FOREIGN KEY fk_rails_7c8e82f6e0[0m
+  [1m[35m (49.8ms)[0m  [1m[35mALTER TABLE `likes` DROP COLUMN `album_id`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200825050408')[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('3829567845579155715')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mLike Load (0.9ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`likeable_id` = 2 AND `likes`.`likeable_type` = 'Photo' LIMIT 11[0m
+  [1m[36mLike Load (1.5ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`likeable_id` = 2 AND `likes`.`likeable_type` = 'Photo' LIMIT 11[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` ORDER BY `albums`.`id` ASC LIMIT 1[0m
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` ORDER BY `albums`.`id` ASC LIMIT 1[0m
+  [1m[36mLike Load (2.7ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`likeable_id` = 5 AND `likes`.`likeable_type` = 'Album' LIMIT 11[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mLike Load (0.7ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`likeable_id` = 2 AND `likes`.`likeable_type` = 'Photo' LIMIT 11[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` ORDER BY `albums`.`id` ASC LIMIT 1[0m
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` ORDER BY `albums`.`id` ASC LIMIT 1[0m
+  [1m[36mLike Load (1.8ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`likeable_id` = 5 AND `likes`.`likeable_type` = 'Album' LIMIT 11[0m
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` ORDER BY `albums`.`id` ASC LIMIT 1[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` ORDER BY `photos`.`id` ASC LIMIT 1[0m
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` ORDER BY `albums`.`id` ASC LIMIT 1[0m
