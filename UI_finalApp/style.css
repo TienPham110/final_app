@@ -99,7 +99,7 @@ ul{
     height: auto;
 }
 .photo_feed_avatar img{
-    max-width: 100%;
+    width: 100%;
     min-height: 225px;
     border-radius: 5px 0px 0px 5px;
     box-shadow: 0px 1px 3px #AAA;
@@ -226,8 +226,8 @@ img{
     box-shadow: 1px 1px 3px #AAA;
 }
 .photo_tab img{
-    max-width: 100%;
-    min-height: 175px;
+    width: 100%;
+    min-height: 200px;
     border-radius: 5px;
     box-shadow: 0px 1px 3px #AAA;
 }
@@ -352,7 +352,6 @@ img{
     opacity: 0.5;
     height: 1.5rem;
     color: white;
-    visibility: ;
   }
 
 
@@ -434,10 +433,17 @@ img{
   }
   
 
+.manage-item.photo-stack img{
+    left: 20%;
+    top: 2.7rem;
+    max-height: 125px;
     
+}
   
 
-
+.edit_manage_album{
+    z-index:2
+}
 
 
 
@@ -532,8 +538,24 @@ img{
     border-radius: 10px;
 }
 
+.photo-stack .top-left {
+        position: absolute;
+        top: 0px;
+        left: 1rem;
+        font-size: 10px;
+        background-color: black;
+        width:130%;
+        opacity: 0.5;
+        height: 1.5rem;
+        color: white;
+}
 
-
+.manage-item.photo-stack{
+    background-color: rgb(255, 235, 235);
+    max-height: 200px;
+    max-width: 225px;
+    min-width: 200px;
+}
 
 .btn_unfollow label{
     border-radius: 10px;

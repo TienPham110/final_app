@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_050408) do
+ActiveRecord::Schema.define(version: 2020_08_26_025339) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
@@ -38,9 +38,10 @@ ActiveRecord::Schema.define(version: 2020_08_25_050408) do
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "likeType"
-    t.bigint "like_id"
+    t.bigint "user_id"
+    t.string "likeable_type"
+    t.bigint "likeable_id"
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -82,6 +83,5 @@ ActiveRecord::Schema.define(version: 2020_08_25_050408) do
   add_foreign_key "albums", "users"
   add_foreign_key "albums_photos", "albums"
   add_foreign_key "albums_photos", "photos"
-  add_foreign_key "likes", "users"
   add_foreign_key "photos", "users"
 end
