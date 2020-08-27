@@ -41,19 +41,19 @@ $(document).ready(function(){
     if($(this).hasClass("liked")){
       $(this).html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
       $(this).removeClass("liked");
-      num = $("small",$(this).parent()).text()
+      num = $(".like_number",$(this).parent()).text()
       like_num = parseInt(num) 
       like_num -= 1
       console.log($(this).attr("class"))
-      $("small",$(this).parent()).text(like_num)
+      $(".like_number",$(this).parent()).text(like_num)
     }else{
       $(this).html('<i class="fa fa-heart" aria-hidden="true"></i>');
       $(this).addClass("liked");
-      num = $("small",$(this).parent()).text()
+      num = $(".like_number",$(this).parent()).text()
       like_num = parseInt(num) 
       like_num += 1
       console.log(like_num)
-      $("small",$(this).parent()).text(like_num)
+      $(".like_number",$(this).parent()).text(like_num)
       
     }
   });

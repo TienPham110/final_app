@@ -1,3 +1,6 @@
+img{
+    object-fit: cover;
+}
 .btn_log{
     background-color: #3c5a9a ;border: 0px; color:#ffffff
 }
