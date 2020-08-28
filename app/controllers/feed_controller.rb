@@ -1,5 +1,5 @@
 class FeedController < ApplicationController
-    def feed
+    def index
         
     end
 end

@@ -7747,3 +7747,1787 @@ Processing by HomeController#newsest as HTML
 Completed 200 OK in 20ms (Views: 14.0ms | ActiveRecord: 1.0ms | Allocations: 5285)
 
 
+Started GET "/" for ::1 at 2020-08-28 14:39:52 +0700
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+AbstractController::ActionNotFound (The action 'feed' could not be found for HomeController):
+  
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-08-28 14:40:06 +0700
+Processing by HomeController#feed as HTML
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms | Allocations: 1889)
+
+
+  
+ActionController::MissingExactTemplate (HomeController#feed is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-08-28 14:40:43 +0700
+Processing by HomeController#feed as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 906)
+
+
+  
+ActionView::MissingTemplate (Missing template home/feed, application/feed with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/tienpham/Desktop/final_app/app/views"
+  * "/home/tienpham/.rvm/gems/ruby-2.7.0/gems/actiontext-6.0.3.2/app/views"
+  * "/home/tienpham/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/home_controller.rb:10:in `feed'
+Started GET "/" for ::1 at 2020-08-28 14:41:57 +0700
+Processing by HomeController#feed as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 905)
+
+
+  
+ActionView::MissingTemplate (Missing template home/feed, application/feed with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/tienpham/Desktop/final_app/app/views"
+  * "/home/tienpham/.rvm/gems/ruby-2.7.0/gems/actiontext-6.0.3.2/app/views"
+  * "/home/tienpham/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/home_controller.rb:10:in `feed'
+Started GET "/" for ::1 at 2020-08-28 14:42:40 +0700
+Processing by HomeController#feed as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 905)
+
+
+  
+ActionView::MissingTemplate (Missing template home/feed, application/feed with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/tienpham/Desktop/final_app/app/views"
+  * "/home/tienpham/.rvm/gems/ruby-2.7.0/gems/actiontext-6.0.3.2/app/views"
+  * "/home/tienpham/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/home_controller.rb:10:in `feed'
+Started GET "/" for ::1 at 2020-08-28 14:43:44 +0700
+Processing by HomeController#feed as HTML
+  Rendering feed/index.html.erb within layouts/application
+  Rendered feed/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 75)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3810)
+
+
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:42:19 +0700
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/albums/1/edit"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/album/1/edit" for ::1 at 2020-08-28 15:42:31 +0700
+  
+ActionController::RoutingError (uninitialized constant AlbumController
+Did you mean?  AlbumsController):
+  
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:42:50 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms | Allocations: 1970)
+
+
+  
+ActionController::MissingExactTemplate (AlbumsController#edit is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:46:54 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 104.0ms | ActiveRecord: 0.0ms | Allocations: 27116)
+
+
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:47:16 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 4576)
+
+
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:47:20 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 4575)
+
+
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:47:26 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 4566)
+
+
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:47:58 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3695)
+
+
+Started GET "/albums/1/edit" for ::1 at 2020-08-28 15:48:05 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 92)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 4563)
+
+
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:48:10 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 3582)
+
+
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:48:15 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 92)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 4571)
+
+
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:54:15 +0700
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 993)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2153)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Edit Album</h1>
+<%=form_for @id, url:{action: "update"}%>
+<%= f.text_field :title %>
+<%= submit_tag "update"%>
+<%end%>
+):
+1:    <h1>Edit Album</h1>
+2:    <%=form_for @id, url:{action: "update"}%>
+3:    <%= f.text_field :title %>
+4:    <%= submit_tag "update"%>
+5:    <%end%>
+  
+app/views/albums/edit.html.erb:7: syntax error, unexpected `end', expecting end-of-input
+app/views/albums/edit.html.erb:7: syntax error, unexpected `end', expecting end-of-input
+app/views/albums/edit.html.erb:7: syntax error, unexpected `end', expecting end-of-input
+app/views/albums/edit.html.erb:7: syntax error, unexpected `end', expecting end-of-input
+app/views/albums/edit.html.erb:7: syntax error, unexpected `end', expecting end-of-input
+app/views/albums/edit.html.erb:7: syntax error, unexpected `end', expecting end-of-input
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:54:41 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 992)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2145)
+
+
+  
+ActionView::Template::Error (Missing block):
+    1: <h1>Edit Album</h1>
+    2: <%=form_for @id, url:{action: "update"}%>
+    3: <%= f.text_field :title %>
+    4: <%= submit_tag "update"%>
+  
+app/views/albums/edit.html.erb:2
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:55:13 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 993)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2145)
+
+
+  
+ActionView::Template::Error (Missing block):
+    1: <h1>Edit Album</h1>
+    2: <%=form_for params[:id], url:{action: "update"}%>
+    3: <%= f.text_field :title %>
+    4: <%= submit_tag "update"%>
+  
+app/views/albums/edit.html.erb:2
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:55:22 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 230.3ms | Allocations: 124829)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.0ms | Allocations: 125981)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `param' for #<#<Class:0x000055655dd7ff60>:0x000055655dd77978>
+Did you mean?  params):
+    1: <h1>Edit Album</h1>
+    2: <%=form_for param[:id], url:{action: "update"}%>
+    3: <%= f.text_field :title %>
+    4: <%= submit_tag "update"%>
+  
+app/views/albums/edit.html.erb:2
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:55:46 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 993)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2145)
+
+
+  
+ActionView::Template::Error (Missing block):
+    1: <h1>Edit Album</h1>
+    2: <%=form_for params[:id], url:{action: "update"}%>
+    3: <%= f.text_field :title %>
+    4: <%= submit_tag "update"%>
+  
+app/views/albums/edit.html.erb:2
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 15:56:33 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 5661)
+
+
+Started POST "/albums/2" for ::1 at 2020-08-28 15:56:35 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/albums/2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 2 LIMIT 11[0m
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 3 LIMIT 11[0m
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 4 LIMIT 11[0m
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 6 LIMIT 11[0m
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 6 LIMIT 11[0m
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 6 LIMIT 1[0m
+Started GET "/" for ::1 at 2020-08-28 15:59:44 +0700
+Processing by HomeController#feed as HTML
+  Rendering feed/index.html.erb within layouts/application
+  Rendered feed/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4135)
+
+
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 16:00:06 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1113)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 4747)
+
+
+Started POST "/albums/2" for ::1 at 2020-08-28 16:00:08 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/albums/2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/albums/2/edit" for ::1 at 2020-08-28 16:00:25 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 736)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4213)
+
+
+Started POST "/albums/2" for ::1 at 2020-08-28 16:04:14 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/albums/2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/albums/2" for ::1 at 2020-08-28 16:07:45 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/albums/2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:07:58 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4744)
+
+
+Started POST "/albums/5" for ::1 at 2020-08-28 16:08:01 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/albums/5"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` LIMIT 11[0m
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+Started GET "/albums" for ::1 at 2020-08-28 16:16:35 +0700
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AlbumsController#index as HTML
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms | Allocations: 1901)
+
+
+  
+ActionController::MissingExactTemplate (AlbumsController#index is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/albums/show" for ::1 at 2020-08-28 16:17:35 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1052)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 5668)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>List Album</h1>
+<table>
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>description</th>
+        <th>create at</th>
+        <th>shared</th>
+        <th>user_id</th>
+    </tr>
+    <%=@album.each do |album|%>
+    <tr>
+        <td><%=album.id %></td>
+        <td><%=album.title%></td>
+        <td><%=album.description%></td>
+        <td><%=album.create_at%></td>
+        <td><%=album.shared%></td>
+        <td><%=album.user_id%></td>
+    </tr>
+</table>
+):
+1:    <h1>List Album</h1>
+2:    <table>
+3:        <tr>
+4:            <th>id</th>
+5:            <th>title</th>
+6:            <th>description</th>
+7:            <th>create at</th>
+8:            <th>shared</th>
+9:            <th>user_id</th>
+10:        </tr>
+11:        <%=@album.each do |album|%>
+12:        <tr>
+13:            <td><%=album.id %></td>
+14:            <td><%=album.title%></td>
+15:            <td><%=album.description%></td>
+16:            <td><%=album.create_at%></td>
+17:            <td><%=album.shared%></td>
+18:            <td><%=album.user_id%></td>
+19:        </tr>
+20:    </table>
+  
+app/views/albums/show.html.erb:22: syntax error, unexpected end-of-input, expecting `end'
+app/views/albums/show.html.erb:22: syntax error, unexpected end-of-input, expecting `end'
+app/views/albums/show.html.erb:22: syntax error, unexpected end-of-input, expecting `end'
+app/views/albums/show.html.erb:22: syntax error, unexpected end-of-input, expecting `end'
+app/views/albums/show.html.erb:22: syntax error, unexpected end-of-input, expecting `end'
+app/views/albums/show.html.erb:22: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/albums/show" for ::1 at 2020-08-28 16:18:16 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1584)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2753)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     8:         <th>shared</th>
+     9:         <th>user_id</th>
+    10:     </tr>
+    11:     <%=@album.each do |album|%>
+    12:     <tr>
+    13:         <td><%=album.id %></td>
+    14:         <td><%=album.title%></td>
+  
+app/views/albums/show.html.erb:11
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` LIMIT 11[0m
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+Started GET "/albums/show" for ::1 at 2020-08-28 16:21:49 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:11
+  Rendered albums/show.html.erb within layouts/application (Duration: 15.7ms | Allocations: 8738)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.4ms | Allocations: 9907)
+
+
+  
+ActionView::Template::Error (undefined method `create_at' for #<Album:0x00007fd608267e48>
+Did you mean?  created_at
+               created_at?
+               created_at=):
+    13:         <td><%=album.id %></td>
+    14:         <td><%=album.title%></td>
+    15:         <td><%=album.description%></td>
+    16:         <td><%=album.create_at%></td>
+    17:         <td><%=album.shared%></td>
+    18:         <td><%=album.user_id%></td>
+    19:     </tr>
+  
+app/views/albums/show.html.erb:16
+app/views/albums/show.html.erb:11
+Started GET "/albums/show" for ::1 at 2020-08-28 16:21:56 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (2.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:11
+  Rendered albums/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1067)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 2.3ms | Allocations: 5558)
+
+
+Started GET "/albums/show" for ::1 at 2020-08-28 16:22:29 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:11
+  Rendered albums/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1067)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.8ms | Allocations: 5529)
+
+
+Started GET "/albums/show" for ::1 at 2020-08-28 16:22:47 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:11
+  Rendered albums/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1064)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 5528)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:23:05 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1248)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4850)
+
+
+Started POST "/albums/5" for ::1 at 2020-08-28 16:23:13 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/albums/5"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:24:20 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 902)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 7.0ms | ActiveRecord: 1.7ms | Allocations: 12549)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:24:21 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"oIISJ8fQuCOes0Oj2WlPzk3/bOFBXCGT3L+Fm0W73A9gsk9RJhm7DO5oQMbxHif9VuU2RJpy3CFwp2Q3rVeUow==", "album"=>{"title"=>"this is a title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (3.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` IS NULL LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:9:in `update'
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 3.2ms | Allocations: 84205)
+
+
+  
+NameError (undefined local variable or method `title' for #<AlbumsController:0x00007fd5fc8adef8>):
+  
+app/controllers/albums_controller.rb:9:in `update'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:25:04 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 7.1ms | ActiveRecord: 1.4ms | Allocations: 11379)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:25:37 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 749)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 6.7ms | ActiveRecord: 1.2ms | Allocations: 11361)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:25:40 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"nWO9+sxBNb+XJN+3iK8O34lKYnqDUrK5KjAW+AXpGPNdU+CMLYg2kOf/3NKg2GbsklA431h8TwuGKPdU7QVQXw==", "album"=>{"title"=>"this is a title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:9:in `update'
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.3ms | Allocations: 84064)
+
+
+  
+NameError (undefined local variable or method `title' for #<AlbumsController:0x00007fd608212650>):
+  
+app/controllers/albums_controller.rb:9:in `update'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:26:12 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 9.2ms | ActiveRecord: 1.2ms | Allocations: 11378)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:26:13 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"GZSIM2k3D0xLkoYHrPRlwXFPc/u++TtPDBdwIXCZZnLZpNVFiP4MYztJhWKEgw3yalUpXmXXxv2gD5GNmHUu3g==", "album"=>{"title"=>"this is a title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:9:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1574)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 2746)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     8:         <th>shared</th>
+     9:         <th>user_id</th>
+    10:     </tr>
+    11:     <%@albums.each do |album|%>
+    12:     <tr>
+    13:         <td style="border: 1px solid"><%=album.id %></td>
+    14:         <td style="border: 1px solid"><%=album.title%></td>
+  
+app/views/albums/show.html.erb:11
+app/controllers/albums_controller.rb:10:in `update'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:26:24 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 875)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.3ms | Allocations: 8395)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Edit Album</h1>
+    2: <%=form_for @album, url:{action: "update"} do |f|%>
+    3: <%= f.text_field :title %>
+    4: <%= submit_tag "update"%>
+    5: <%end%>
+  
+app/views/albums/edit.html.erb:2
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:28:04 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 882)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 11.2ms | ActiveRecord: 1.5ms | Allocations: 12258)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:28:05 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"oV2Jdi5T1H9C6+euKoK3FxZO4ulZN/cFy8/L0DvpqgthbdQAz5rXUDIw5MsC9d8kDVS4TIIZCrdn1yp80wXipw==", "album"=>{"title"=>"this is a title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (1.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:9:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1573)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.7ms | Allocations: 2751)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     8:         <th>shared</th>
+     9:         <th>user_id</th>
+    10:     </tr>
+    11:     <%@albums.each do |album|%>
+    12:     <tr>
+    13:         <td style="border: 1px solid"><%=album.id %></td>
+    14:         <td style="border: 1px solid"><%=album.title%></td>
+  
+app/views/albums/show.html.erb:11
+app/controllers/albums_controller.rb:10:in `update'
+Started GET "/albums/5" for ::1 at 2020-08-28 16:29:02 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1322)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1909)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     8:         <th>shared</th>
+     9:         <th>user_id</th>
+    10:     </tr>
+    11:     <%@albums.each do |album|%>
+    12:     <tr>
+    13:         <td style="border: 1px solid"><%=album.id %></td>
+    14:         <td style="border: 1px solid"><%=album.title%></td>
+  
+app/views/albums/show.html.erb:11
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:29:06 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 7.1ms | ActiveRecord: 3.1ms | Allocations: 11257)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:29:10 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"MPrMtcgGxSvohYjzB8bfhL5XLZwkUQeli97j/BzyUbXwypHDKc/GBJhei5Yvsbe3pU13Of9/+hcnxgJQ9B4ZGQ==", "album"=>{"title"=>"this is a title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (1.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:11
+  Rendered albums/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 853)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 18.6ms | ActiveRecord: 2.4ms | Allocations: 5014)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:29:20 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.6ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 4458)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:29:26 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"q6LamZteg0QsJLL4mlL0g6p7qeZagjhjF/MMGiUOViBrkofvepeAa1z/sZ2yJZywsWHzQ4GsxdG76+22zeIejA==", "album"=>{"title"=>"this is new"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:11
+  Rendered albums/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 849)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 1.3ms | Allocations: 5023)
+
+
+Started GET "/albums/5" for ::1 at 2020-08-28 16:30:15 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1555)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2716)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:         <th>shared</th>
+    10:         <th>user_id</th>
+    11:     </tr>
+    12:     <%@albums.each do |album|%>
+    13:     <tr>
+    14:         <td style="border: 1px solid"><%=album.id %></td>
+    15:         <td style="border: 1px solid"><%=album.title%></td>
+  
+app/views/albums/show.html.erb:12
+Started GET "/albums/show" for ::1 at 2020-08-28 16:30:22 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1370)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1789)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:         <th>shared</th>
+    10:         <th>user_id</th>
+    11:     </tr>
+    12:     <%@albums.each do |album|%>
+    13:     <tr>
+    14:         <td style="border: 1px solid"><%=album.id %></td>
+    15:         <td style="border: 1px solid"><%=album.title%></td>
+  
+app/views/albums/show.html.erb:12
+Started GET "/albums/show" for ::1 at 2020-08-28 16:30:35 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 4605)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 13.8ms | ActiveRecord: 1.1ms | Allocations: 11053)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:30:44 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 881)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.6ms | Allocations: 5276)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:30:48 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"+m5EuDsvBnyHqLxBAcBa7JObVDSeeptcwoFLSV+yo6o6XhnO2uYFU/dzvyQptzLfiIEOkUVUZu5umarlt17rBg==", "album"=>{"title"=>"this is a title new"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 903)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 13.1ms | ActiveRecord: 1.4ms | Allocations: 5070)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:32:38 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 6.9ms | ActiveRecord: 2.0ms | Allocations: 12243)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:32:42 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"zUNYjFvFajayfDHGZqt8CG4S2nGly/3a9AVSfEzQ9NwNcwX6ugxpGcKnMqNO3BQ7dQiA1H7lAGhYHbPQpDy8cA==", "album"=>{"title"=>"this is a title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (1.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (2.0ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1146)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 23.9ms | ActiveRecord: 3.4ms | Allocations: 5457)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:32:53 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"zUNYjFvFajayfDHGZqt8CG4S2nGly/3a9AVSfEzQ9NwNcwX6ugxpGcKnMqNO3BQ7dQiA1H7lAGhYHbPQpDy8cA==", "album"=>{"title"=>"this is a titleaaaa"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (3.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 18.8ms | ActiveRecord: 4.4ms | Allocations: 5087)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:34:42 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 5.4ms | ActiveRecord: 2.1ms | Allocations: 11339)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:34:46 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"Pb8vNycvow+me0Ta31kVsiQzUTnsK+UR3NgWpsInWIT9j3JBxuagINagR7/3Ln2BPykLnDcFGKNwwPcKKssQKA==", "album"=>{"title"=>"this is a title aaa"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 911)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 18.7ms | ActiveRecord: 1.6ms | Allocations: 5076)
+
+
+Started GET "/albums/5" for ::1 at 2020-08-28 16:35:27 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2515)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 3664)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    21:     </tr>
+    22:     <%end%>
+    23: </table>
+    24: <%=@a.title%>
+  
+app/views/albums/show.html.erb:24
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:35:37 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 465)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 4905)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:35:54 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"jFb6ePqLQdIS7VtqUcr6Pgxfx61ZhNtehNKltROusgdMZqcOG0JC/WI2WA95vZINF0WdCIKqJuwoykQZ+0L6qw==", "album"=>{"title"=>"this is a titlesss"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 20.6ms | Allocations: 4196)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.6ms | Allocations: 5979)
+
+
+  
+ActionView::Template::Error (undefined method `first' for #<Album:0x000055655c223b40>):
+    21:     </tr>
+    22:     <%end%>
+    23: </table>
+    24: <%=@a.first.title%>
+  
+app/views/albums/show.html.erb:24
+app/controllers/albums_controller.rb:13:in `update'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:37:06 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 885)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 8.9ms | ActiveRecord: 1.2ms | Allocations: 12275)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:37:10 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"fTFwAgt8nvTBHSjAeklEhG49suy+l7XHApVAE725QWa9AS106rWd27HGK6VSPiy3dSfoSWW5SHWujaG/VVUJyg==", "album"=>{"title"=>"this is a titleaaaa"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 11[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 3557)
+
+
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 11[0m
+  
+NoMethodError (undefined method `title=' for #<Album::ActiveRecord_Relation:0x00007fd6080cbaf8>):
+  
+app/controllers/albums_controller.rb:11:in `update'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:37:18 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 6.2ms | ActiveRecord: 2.1ms | Allocations: 11408)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:37:22 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"aIByt+iQCrSR4gIEb8PxX2tE/qnTzFkGpLNWiHmrPAyosC/BCVkJm+E5AWFHtJlscF6kDAjipLQIq7ckkUd0oA==", "album"=>{"title"=>"this is a titleaaa"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 ORDER BY `albums`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:11:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 11[0m
+  ↳ app/controllers/albums_controller.rb:13:in `update'
+  Rendered albums/show.html.erb within layouts/application (Duration: 20.1ms | Allocations: 4729)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.7ms | Allocations: 6143)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Album::ActiveRecord_Relation:0x000055655ddc6a78>):
+    21:     </tr>
+    22:     <%end%>
+    23: </table>
+    24: <%=@a.title%>
+  
+app/views/albums/show.html.erb:24
+app/controllers/albums_controller.rb:13:in `update'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:37:29 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 465)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 5505)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:37:31 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"slJ577GFsz/XRBtOS7ztO5w0p82zbZDS7v+8nZundwxyYiSZUEywEKefGCtjy4UIhy79aGhDbWBC510xc0s/oA==", "album"=>{"title"=>"this is a titleaaaa"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 ORDER BY `albums`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:11:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1131)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 1.6ms | Allocations: 5598)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:37:51 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 7.9ms | ActiveRecord: 1.6ms | Allocations: 11348)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:37:54 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"+xLfy9FDhLz7YqPbVVs3eotxpK+O+yXJ+m2O7kgcF8s7IoK9MIqHk4u5oL59LF9JkGv+ClXV2HtWdW9CoPBfZw==", "album"=>{"title"=>"this is a title1111"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (2.6ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 908)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 3.5ms | Allocations: 5203)
+
+
+Started GET "/albums/show" for ::1 at 2020-08-28 16:39:18 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 6153)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.0ms | Allocations: 9841)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    21:     </tr>
+    22:     <%end%>
+    23: </table>
+    24: <%=@a.title%>
+  
+app/views/albums/show.html.erb:24
+Started GET "/albums/8/edit" for ::1 at 2020-08-28 16:39:42 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 881)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.7ms | Allocations: 5458)
+
+
+Started PATCH "/albums/8" for ::1 at 2020-08-28 16:39:43 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"tZPLTKOBHBHXw4A0QKV0dTIYCQmemDfne/WIGBrBsd91o5Y6QkgfPqcYg1Fo0hxGKQJTrEW2ylXX7Wm08i35cw==", "album"=>{"title"=>"aaaaa"}, "commit"=>"update", "id"=>"8"}
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 18.4ms | ActiveRecord: 1.5ms | Allocations: 5180)
+
+
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:40:15 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 328)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 4457)
+
+
+Started PATCH "/albums/9" for ::1 at 2020-08-28 16:40:18 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"JKnZP+y2T9dTYY3uXQHD3/bTPOiTg+KkAVj5A5UD7Y/kmYRJDX9M+CO6jot1dqvs7clmTUitHxatQBivfe+lIw==", "album"=>{"title"=>"aaaaww"}, "commit"=>"update", "id"=>"9"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (2.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 19.6ms | ActiveRecord: 2.9ms | Allocations: 5048)
+
+
+Started GET "/albums/9" for ::1 at 2020-08-28 16:41:15 +0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"9"}
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 5928)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms | Allocations: 9046)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    21:     </tr>
+    22:     <%end%>
+    23: </table>
+    24: <%=@a.title%>
+  
+app/views/albums/show.html.erb:24
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:41:22 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 746)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 5016)
+
+
+Started PATCH "/albums/9" for ::1 at 2020-08-28 16:41:24 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"lqAeT4HP43ro8PFRWKucwJZgvVHsTFqkn3t/BBF/1WxWkEM5YAbgVZgr8jRw3PTzjXrn9DdipxYzY56o+ZOdwA==", "album"=>{"title"=>"aaaawwra1111"}, "commit"=>"update", "id"=>"9"}
+  [1m[36mAlbum Load (4.0ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 4.0ms | Allocations: 84368)
+
+
+  
+NameError (undefined local variable or method `album' for #<AlbumsController:0x00007fd608221d58>
+Did you mean?  album_url):
+  
+app/controllers/albums_controller.rb:11:in `update'
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:41:37 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 8.3ms | ActiveRecord: 1.5ms | Allocations: 11393)
+
+
+Started PATCH "/albums/9" for ::1 at 2020-08-28 16:41:39 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"8HLD9291SjQCoYoBpJ+gybYLI0AdvUlQ6RZZ/QytExswQp6BjrxJG3J6iWSM6Mj6rRF55caTtOJFDrhR5EFbtw==", "album"=>{"title"=>"aaaawwra111"}, "commit"=>"update", "id"=>"9"}
+  [1m[36mAlbum Load (2.5ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 2.5ms | Allocations: 84375)
+
+
+  
+NameError (undefined local variable or method `albums' for #<AlbumsController:0x00007fd6080e1218>
+Did you mean?  albums_url):
+  
+app/controllers/albums_controller.rb:11:in `update'
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:45:20 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 6.4ms | ActiveRecord: 1.4ms | Allocations: 11373)
+
+
+Started PATCH "/albums/9" for ::1 at 2020-08-28 16:45:26 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"MmV+Yj1G7z0MrJtRVKPpfLarNbpyMEopB/AdMQhiiRDyVSMU3I/sEnx3mDR81IFPrbFvH6ket5ur6Pyd4I7BvA==", "album"=>{"title"=>"new title"}, "commit"=>"update", "id"=>"9"}
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 0.8ms | Allocations: 84256)
+
+
+  
+NameError (undefined local variable or method `albums' for #<AlbumsController:0x00007fd608264a18>
+Did you mean?  albums_url):
+  
+app/controllers/albums_controller.rb:11:in `update'
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:46:11 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 6.1ms | ActiveRecord: 1.1ms | Allocations: 11362)
+
+
+Started PATCH "/albums/9" for ::1 at 2020-08-28 16:46:15 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"Kco9dHq4N3l7UY52pkERNOP+yq7jcyHHkNZoSlVIujLp+mACm3E0VguKjROONnkH+OSQCzhd3HU8zonmvaTyng==", "album"=>{"title"=>"new albums"}, "commit"=>"update", "id"=>"9"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.7ms | Allocations: 84244)
+
+
+  
+NameError (undefined local variable or method `album' for #<AlbumsController:0x00007fd60808bac0>
+Did you mean?  album_url):
+  
+app/controllers/albums_controller.rb:11:in `update'
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:50:19 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (9) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 6.7ms | ActiveRecord: 2.0ms | Allocations: 11359)
+
+
+Started PATCH "/albums/9" for ::1 at 2020-08-28 16:50:24 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"18ZbOc+HntjCQnoW1fWZ0wK184QIfZNm5VPmuT6dlQcX9gZPLk6d97KZeXP9gvHgGa+pIdNTbtRJSwcV1nHdqw==", "album"=>{"title"=>"this is a title new"}, "commit"=>"update", "id"=>"9"}
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.2ms | Allocations: 4359)
+
+
+  
+NoMethodError (undefined method `save' for #<Class:0x00007fd5fc80acf8>):
+  
+app/controllers/albums_controller.rb:11:in `update'
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:50:52 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (9) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 6.2ms | ActiveRecord: 2.0ms | Allocations: 11379)
+
+
+Started PATCH "/albums/9" for ::1 at 2020-08-28 16:50:55 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"83lY5kxjihJnJI1/k/TDFsaak0v4p8WjCfr+cVi2nRQzSQWQraqJPRf/jhq7g6sl3YDJ7iOJOBGl4h/dsFrVuA==", "album"=>{"title"=>"this is a title new"}, "commit"=>"update", "id"=>"9"}
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mAlbum Update (0.3ms)[0m  [1m[33mUPDATE `albums` SET `albums`.`title` = 'this is a title new', `albums`.`updated_at` = '2020-08-28 09:50:55.153348' WHERE `albums`.`id` = 9[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 911)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 87ms (Views: 9.2ms | ActiveRecord: 11.1ms | Allocations: 21656)
+
+
+Started GET "/albums/9/edit" for ::1 at 2020-08-28 16:51:07 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (9) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 470)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 5644)
+
+
+Started GET "/albums/10/edit" for ::1 at 2020-08-28 16:51:10 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (10) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 328)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 4588)
+
+
+Started PATCH "/albums/10" for ::1 at 2020-08-28 16:51:15 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"xxnhPBr7SYqHFgnwmANeS2AlKQ88n3CI8/I8lWjV74UHKbxK+zJKpffNCpWwdDZ4ez9zquexjTpf6t05gDmnKQ==", "album"=>{"title"=>"new new"}, "commit"=>"update", "id"=>"10"}
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mAlbum Update (0.8ms)[0m  [1m[33mUPDATE `albums` SET `albums`.`title` = 'new new', `albums`.`updated_at` = '2020-08-28 09:51:15.374998' WHERE `albums`.`id` = 10[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1131)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 18.8ms | ActiveRecord: 9.4ms | Allocations: 9125)
+
+

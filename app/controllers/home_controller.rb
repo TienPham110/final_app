@@ -6,5 +6,9 @@ class HomeController < ApplicationController
         @albums = Album.order(created_at: :asc).take(4)
         render 'newsest'
     end
+    def feed
+        render template: "feed/index"
+    end
+    
     
 end

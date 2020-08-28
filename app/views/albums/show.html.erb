@@ -1,0 +1,23 @@
+<h1>List Album</h1>
+<table>
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>description</th>
+        <th>create at</th>
+        <th>update at</th>
+        <th>shared</th>
+        <th>user_id</th>
+    </tr>
+    <%@albums.each do |album|%>
+    <tr>
+        <td style="border: 1px solid"><%=album.id %></td>
+        <td style="border: 1px solid"><%=album.title%></td>
+        <td style="border: 1px solid"><%=album.description%></td>
+        <td style="border: 1px solid"><%=album.created_at%></td>
+        <td style="border: 1px solid"><%=album.updated_at%></td>
+        <td style="border: 1px solid"><%=album.shared%></td>
+        <td style="border: 1px solid"><%=album.user_id%></td>
+    </tr>
+    <%end%>
+</table>
