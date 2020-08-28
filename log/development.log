@@ -9531,3 +9531,91 @@ Processing by AlbumsController#update as HTML
 Completed 200 OK in 47ms (Views: 18.8ms | ActiveRecord: 9.4ms | Allocations: 9125)
 
 
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:57:19 +0700
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 11468)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:57:28 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"ouKo2XIPlYND3W7o4pnlgVLenvaG78oT9OkCWEUQ7MZi0vWvk8aWrDMGbY3K7o2yScTEU13BN6FY8eP0rfykag==", "album"=>{"title"=>"this is a new title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mAlbum Update (0.4ms)[0m  [1m[33mUPDATE `albums` SET `albums`.`title` = '{\"title\"=>\"this is a new title\"}', `albums`.`updated_at` = '2020-08-28 09:57:28.531934' WHERE `albums`.`id` = 5[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 908)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 12.0ms | ActiveRecord: 7.4ms | Allocations: 19454)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:59:10 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 749)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 5.3ms | ActiveRecord: 1.2ms | Allocations: 11338)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:59:23 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"6e3jN0EM/KF73s+WMQxsyYjK1bjNBhVGb/EN6Goe47Yp3b5BoMX/jgsFzPMZewT6k9CPHRYo6PTD6exEgvKrGg==", "album"=>{"title"=>"this is new title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.1ms | Allocations: 2024)
+
+
+  
+NoMethodError (undefined method `title' for #<ActionController::Parameters:0x00007fd62130bca0>):
+  
+app/controllers/albums_controller.rb:11:in `update'
+Started GET "/albums/5/edit" for ::1 at 2020-08-28 16:59:40 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 749)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 6.4ms | ActiveRecord: 1.2ms | Allocations: 11360)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-28 16:59:46 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"eQMpe6FC/l1AuY+QsKz4iuyyL3UK+N7nvs3O5s2Lqbq5M3QNQIv9cjBijPWY25C596h10NHWI1US1S9KJWfhFg==", "album"=>{"title"=>"this is new title"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mAlbum Update (0.4ms)[0m  [1m[33mUPDATE `albums` SET `albums`.`title` = 'this is new title', `albums`.`updated_at` = '2020-08-28 09:59:46.942312' WHERE `albums`.`id` = 5[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 907)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 6.5ms | ActiveRecord: 10.3ms | Allocations: 21746)
+
+

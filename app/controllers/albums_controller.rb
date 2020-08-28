@@ -8,7 +8,7 @@ class AlbumsController < ApplicationController
     def update 
         
         @a = Album.find(params[:id])
-        @a.title = params[:album][:title]
+        @a.title = title_params[:title]
         @a.save
         @albums = Album.all
         render :show
@@ -16,6 +16,10 @@ class AlbumsController < ApplicationController
     def show
         
     end
+    private 
+        def title_params
+            params.require(:album).permit(:title)
+        end
     
     
     
