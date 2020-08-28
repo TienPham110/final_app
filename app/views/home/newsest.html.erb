@@ -1,0 +1,11 @@
+<h1>Titles of all the newsest albums</h1>
+<table >
+<%i = 1%>
+<% @albums.each do |album|%>
+<tr>
+    <th style="border: 1px solid">Title <%=i%> :</th>
+    <td style="border: 1px solid"><%= album.title %></td>
+    <%i+=1%>
+</tr>
+<%end%>
+</table>

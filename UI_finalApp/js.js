@@ -61,7 +61,7 @@ $(document).ready(function(){
 $(document).ready(function() {
   var index
   $('.photo_item .photo_feed_avatar').click(function(){
-    photo_item = $(this).parent().parent().parent().parent()
+    photo_item = $(this).parent().parent().parent()
     index = photo_item.index()
     src = $("img:first-child",this).attr("src")
       title = $(".title").map(function(){
