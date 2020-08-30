@@ -1,0 +1,1 @@
+{"ast":null,"code":"console.log(\"ok\");","map":{"version":3,"sources":["/home/tienpham/Desktop/final_app/app/javascript/packs/a.js"],"names":["console","log"],"mappings":"AAAAA,OAAO,CAACC,GAAR,CAAY,IAAZ","sourcesContent":["console.log(\"ok\");"]},"metadata":{},"sourceType":"module"}

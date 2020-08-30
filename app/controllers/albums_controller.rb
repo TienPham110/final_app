@@ -6,12 +6,17 @@ class AlbumsController < ApplicationController
         @albums = Album.find_by(params[:id])
     end
     def update 
-        
+        @albums = Album.find_by(params[:id])
         @a = Album.find(params[:id])
         @a.title = title_params
-        @a.save
-        @albums = Album.all
-        render :show
+            if @a.save
+                @album = Album.all
+                flash.discard
+                render :show
+            else
+                flash[:error] = "Update fail"
+                render :edit
+            end
     end
     def show
         
@@ -20,7 +25,5 @@ class AlbumsController < ApplicationController
         def title_params
             params.require(:album).permit(:title)[:title]
         end
-    
-    
-    
+     
 end
