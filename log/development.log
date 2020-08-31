@@ -15638,3 +15638,164 @@ app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or me
 app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
 app/views/albums/edit.html.erb:24: syntax error, unexpected '}', expecting ')'
 app/views/albums/edit.html.erb:34: syntax error, unexpected `end', expecting ')'
+Started GET "/albums/5/edit" for ::1 at 2020-08-31 11:52:58 +0700
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1143)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 2268)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
+</head>
+<body>
+    <h1>Edit Album</h1>
+    <%=form_for @albums, url:{action: "update"} do |f|%>
+    <%= f.text_field :title ,:required => true%>
+    <%= submit_tag "update"%>
+    <%end%>
+    <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+    <% end %> 
+    <%= xml.div{ xml.h1("a") xml.h2("b") xml.h3("c") }%>
+    <script type="text/javascript">
+        <%= render "validate.js" %>
+    </script>
+</body> 
+</html>
+
+
+
+):
+1:    
+2:    
+3:    
+4:    
+5:    <!DOCTYPE html>
+6:    <html lang="en">
+7:    <head>
+8:        <meta charset="UTF-8">
+9:        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+10:        <title>Document</title>
+11:        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+12:        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+13:        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
+14:    </head>
+15:    <body>
+16:        <h1>Edit Album</h1>
+17:        <%=form_for @albums, url:{action: "update"} do |f|%>
+18:        <%= f.text_field :title ,:required => true%>
+19:        <%= submit_tag "update"%>
+20:        <%end%>
+21:        <% flash.each do |name, msg| -%>
+22:        <%= content_tag :div, msg, class: name %>
+23:        <% end %> 
+24:        <%= xml.div{ xml.h1("a") xml.h2("b") xml.h3("c") }%>
+25:        <script type="text/javascript">
+26:            <%= render "validate.js" %>
+27:        </script>
+28:    </body> 
+29:    </html>
+  
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting '}'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected '}', expecting ')'
+app/views/albums/edit.html.erb:34: syntax error, unexpected `end', expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting '}'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected '}', expecting ')'
+app/views/albums/edit.html.erb:34: syntax error, unexpected `end', expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting '}'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected '}', expecting ')'
+app/views/albums/edit.html.erb:34: syntax error, unexpected `end', expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting '}'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected '}', expecting ')'
+app/views/albums/edit.html.erb:34: syntax error, unexpected `end', expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting '}'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected '}', expecting ')'
+app/views/albums/edit.html.erb:34: syntax error, unexpected `end', expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting '}'
+app/views/albums/edit.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/albums/edit.html.erb:24: syntax error, unexpected '}', expecting ')'
+app/views/albums/edit.html.erb:34: syntax error, unexpected `end', expecting ')'
+Started GET "/albums/5/edit" for ::1 at 2020-08-31 11:53:15 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/_validate.js (Duration: 1.9ms | Allocations: 62)
+  Rendered albums/edit.html.erb within layouts/application (Duration: 7.7ms | Allocations: 828)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 27.5ms | ActiveRecord: 0.7ms | Allocations: 6069)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-31 11:53:19 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"D+L4BvOKReLk0QN2/nVK/WZuH48Mc0MF6Dg+IkTLeiLhtqJXrofz8Tyxxjsfc5z+DYNd8A2zJhYkn4LG+No5rw==", "album"=>{"title"=>"1"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:9:in `update'
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+Redirected to http://localhost:3000/albums/5/edit
+Completed 302 Found in 17ms (ActiveRecord: 2.0ms | Allocations: 5155)
+
+
+Started GET "/albums/5/edit" for ::1 at 2020-08-31 11:53:19 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:6:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/_validate.js (Duration: 0.0ms | Allocations: 8)
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 420)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 4755)
+
+
+Started PATCH "/albums/5" for ::1 at 2020-08-31 11:53:22 +0700
+Processing by AlbumsController#update as HTML
+  Parameters: {"authenticity_token"=>"f3qlIhPwa6/MFQdZDwFbisd//iGPMeKqL3ZpO3m0SOWRLv9zTv3dvBR1whTuB42JrJK8Xo7xh7nj0dXfxaULaA==", "album"=>{"title"=>"12345678911111"}, "commit"=>"update", "id"=>"5"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE (5) LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:9:in `update'
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT `albums`.* FROM `albums` WHERE `albums`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:10:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `update'
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT `albums`.* FROM `albums`[0m
+  ↳ app/views/albums/show.html.erb:12
+  Rendered albums/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 20.5ms | ActiveRecord: 4.0ms | Allocations: 9048)
+
+
