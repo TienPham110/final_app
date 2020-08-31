@@ -11,11 +11,10 @@ class AlbumsController < ApplicationController
         @a.title = title_params
             if @a.save
                 @album = Album.all
-                flash.discard
                 render :show
             else
                 flash[:error] = "Update fail"
-                render :edit
+                redirect_to action: :edit
             end
     end
     def show

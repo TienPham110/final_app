@@ -1,4 +1,5 @@
-$(".edit_album").validate({
+
+  $(".edit_album").validate({
     //error place
     errorPlacement: function (error, element) {
       error.insertBefore(element);
@@ -11,9 +12,8 @@ $(".edit_album").validate({
     },
     // error messages
     messages: {
-      title:{
-        required: "Username is required."
+      "album[title]":{
+        required: "Title must be entered "
       }
     }
   });
-  
