@@ -11,6 +11,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
+gem 'rails-i18n'
 gem 'mysql2', '~>0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

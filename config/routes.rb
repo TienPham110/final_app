@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'home/discovery', to: 'home#discovery'
   get 'newsest', to: 'home#newsest'
   resources :albums
+  resources :user
 end

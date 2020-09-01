@@ -6,6 +6,7 @@ class Album < ApplicationRecord
     validates :title, presence: true, length:{minimum: 10}
     validates :description, length:{maximum: 255}
 
+    
     # before_validation :check_if_album_has_a_description
     
     # private

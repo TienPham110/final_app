@@ -130,10 +130,13 @@ ul{
     border: 2px solid #3c5a9a;
     color: #3c5a9a;
 }
-.border-feed:active{
+.border-feed:active , .border-feed-album, .border-feed-photo{
     background-color: #3c5a9a;
     color: #ffffff;
 }
+
+    
+
 
 .font-color{
     color: #3c5a9a;
@@ -157,7 +160,10 @@ ul{
     font-size: 12px;
     height: auto;
 }
-.feed_left{
+.left_col > *{
+    color: #AAA;
+}
+.left_col .left, .left_col label:hover{
     color: #3c5a9a;
  }
 .fa-heart-o {
@@ -489,14 +495,12 @@ img{
     line-height: 1.5;
     cursor: pointer;
     text-align: center;
-    color: #3c5a9a;
 }
 .profile-stats li span{
     font-size: 1.5rem;
     line-height: 1.5;
     cursor: pointer;
     text-align: center;
-    color: #3c5a9a;
 }
 
 .profile-stats li:last-of-type {

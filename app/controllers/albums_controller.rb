@@ -4,6 +4,7 @@ class AlbumsController < ApplicationController
     end
     def edit
         @albums = Album.find_by(params[:id])
+
     end
     def update 
         @albums = Album.find_by(params[:id])
@@ -13,12 +14,12 @@ class AlbumsController < ApplicationController
                 @album = Album.all
                 render :show
             else
-                flash[:error] = "Update fail"
+                flash[:error] = t(:"Update fail")
                 redirect_to action: :edit
             end
     end
     def show
-        
+        @album = Album.all
     end
     private 
         def title_params
