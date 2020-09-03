@@ -1,0 +1,841 @@
+body{
+    background-color: #fdf5f5;
+}
+img{
+    object-fit: cover;
+}
+.btn_log{
+    background-color: #3c5a9a ;border: 0px; color:#ffffff
+}
+
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+
+
+/*validate*/
+[class="error"]{
+    font-size: 10px;
+    color: red;
+}
+
+
+ul{ 
+    list-style-type: none ;
+}
+
+.photo_feed{
+    background-color: #fcfafa;
+    border-radius: 5px;
+    box-shadow: 0px 2px 1px #AAA;
+
+}
+.photo_feed_avatar{
+    height: auto;
+}
+.photo_feed_avatar img{
+    width: 100%;
+    min-height: 280px;
+    border-radius: 5px 0px 0px 5px;
+    box-shadow: 0px 1px 3px #AAA;
+}
+
+
+.photo_follow{
+    background-color: #fdf5f5;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #AAA;
+
+}
+.photo_follow_avatar{
+    height: auto;
+}
+.photo_follow_avatar img{
+    max-width: 100%;
+    min-height: 100px;
+    border-radius: 5px 0px 0px 5px;
+    box-shadow: 0px 1px 3px #AAA;
+}
+
+
+.border-feed{
+    border: 2px solid #3c5a9a;
+    color: #3c5a9a;
+}
+.border-feed:active , .border-feed-album, .border-feed-photo{
+    background-color: #3c5a9a;
+    color: #ffffff;
+}
+
+    
+
+
+.font-color{
+    color: #3c5a9a;
+}
+
+.photo_feed_container{
+    background-color:#ffffff; 
+    border-radius: 2px; 
+    border: 5px solid rgb(253, 246, 246);
+
+}
+.flex{
+    display: flex;
+    display: -webkit-flex;
+    flex-grow: 1;
+}
+.photo_feed_description p{
+    display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+    font-size: 12px;
+    height: auto;
+}
+.left_col > *{
+    color: #AAA;
+}
+.left_col .left, .left_col label:hover{
+    color: #3c5a9a;
+ }
+.fa-heart-o {
+    color: red;
+    cursor: pointer;
+}
+  
+.fa-heart {
+    color: red;
+    cursor: pointer;
+}
+small{ 
+    font-size: 8px;
+    color: rgb(160, 160, 241);
+}
+img{ 
+    cursor: pointer;
+}
+.title_description_discovery{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.title_description_discovery label{
+    border-radius: 10px;
+}
+
+.avatar_tab_header{
+    height: auto;
+}
+.avatar_tab_header img{
+    width: 100%;
+}
+.btn_edit_profile:hover{
+    border-radius: 15px;
+    width: 80px;
+    height: 25px;
+    background-color: #3c5a9a;
+    color: white;
+}
+.btn_edit_profile{
+    border-radius: 15px;
+    width: 80px;
+    height: 25px;
+    font-size: 10px;
+    background-color: white;
+    color: #3c5a9a;
+    border: 2px solid #3c5a9a;
+}
+.name_tab_header{
+    font-size: 50px;
+}
+
+.num_tab{
+    font-size: 25px;
+    font-weight: bold;
+    color: #3c5a9a;
+}
+.label_photo_tab{ 
+    font-size: 10px;
+    font-weight: bold;
+    color: #3c5a9a;
+}
+
+
+.photo_tab{
+    height: auto;
+    background-color: #fdf5f5;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #AAA;
+}
+.photo_tab img{
+    width: 100%;
+    min-height: 200px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px #AAA;
+}
+
+.photo_tab_title{
+    background: #ffffff;
+    color: #d6b6b6;
+    font-weight: bold;
+}
+
+#photoModal{
+    width:100%;
+    height: 100%;
+}
+
+.container_tab {
+    max-width: 93.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem -1rem;
+    padding-bottom: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1 0 22rem;
+    margin: 1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gallery-item:hover .gallery-item-info,
+.gallery-item:focus .gallery-item-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item-info {
+    display: none;
+    z-index: 2;
+}
+
+.gallery-item-info li{
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.gallery-item-num {
+    margin-right: 2.2rem;
+    background-color: black;
+    width: 5rem;
+    height: 5rem;
+    opacity: 0.5;
+}
+
+.photo_feed_avatar.photo-stack img{
+    height: auto;
+    min-height: 245px;
+}
+.gallery-item-type {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 2;
+    color: rgb(240, 197, 197);
+}
+
+.fa-clone,
+.fa-comment {
+    transform: rotateY(180deg);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo_tab_album{
+    height: auto;
+    max-height: 220px;
+}
+.photo_tab_album img{
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 220px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px #AAA;
+}
+
+
+.container_manage {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .container_manage:hover .top-left,
+  .container_manage:focus .top-left{
+    visibility: visible;
+  }
+  
+  .top-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 10px;
+    background-color: black;
+    width:100%;
+    opacity: 0.5;
+    height: 1.5rem;
+    color: white;
+  }
+
+
+
+.following{
+    background-color :yellow;
+    color: #0f0404;
+}
+
+.unfollowed{
+    background-color: white!important;
+    color: yellow!important;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+
+
+.photo-stack {
+    position: relative;
+    margin: auto;
+    width: 300px;
+    height: 250px;
+  }
+  .photo-stack > p {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1000;
+  }
+  .photo-stack img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid white;
+    box-shadow: 0 1px 3px -2px rgba(0,0,0,.5);
+    transition: all 0.3s ease-out;
+  }
+  .photo-stack img:nth-child(1) {
+    z-index: 1;
+  }
+  .photo-stack img:nth-child(2) {
+    transform: rotate3d(0,0,1,6deg);
+  }
+  .photo-stack img:nth-child(3) {
+    transform: rotate3d(0,0,1,3deg);
+  }
+  
+  .photo-stack:hover img:nth-child(1) {
+    transform: scale(1.02);
+  }
+  .photo-stack:hover img:nth-child(2) {
+    transform: translate3d(10%, 0, 0) rotate3d(0,0,1,8deg);
+  }
+  .photo-stack:hover img:nth-child(3) {
+    transform: translate3d(-10%, 0, 0) rotate3d(0,0,1,5deg);
+  }
+  
+
+.manage-item.photo-stack img{
+    left: 20%;
+    top: 2.7rem;
+    max-height: 125px;
+    
+}
+  
+
+.edit_manage_album{
+    z-index:2
+}
+
+
+
+/* Profile Section */
+
+.profile {
+    padding: 5rem 0;
+}
+
+.profile::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.profile-image {
+    float: left;
+    width: calc(33.333% - 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 80%;
+}
+
+.profile-user-settings,
+.profile-bio {
+    float: left;
+    width: calc(66.666% - 2rem);
+}
+
+.profile-user-settings {
+    margin-top: 1.1rem;
+}
+
+.profile-user-name {
+    display: inline-block;
+    font-size: 3.0rem;
+    font-weight: 300;
+}
+
+
+.profile-stats li:not(span){
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    text-align: center;
+}
+.profile-stats li span{
+    font-size: 1.5rem;
+    line-height: 1.5;
+    cursor: pointer;
+    text-align: center;
+}
+
+.profile-stats li:last-of-type {
+    margin-right: 0;
+}
+
+
+.profile-bio {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 2.3rem;
+}
+
+.profile-real-name,
+.profile-stat-count,
+.profile-edit-btn {
+    font-weight: 600;
+}
+.btn_add_photo{
+    font-weight: bold;
+    font-size: 15px;
+    height:100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.btn_add_album{
+    font-weight: bold;
+    font-size: 15px;
+    height:100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.photo-stack .top-left {
+        position: absolute;
+        top: 0px;
+        left: 1rem;
+        font-size: 10px;
+        background-color: black;
+        width:130%;
+        opacity: 0.5;
+        height: 1.5rem;
+        color: white;
+}
+
+.manage-item.photo-stack{
+    background-color: rgb(255, 235, 235);
+    max-height: 200px;
+    max-width: 225px;
+    min-width: 200px;
+}
+
+.btn_unfollow label{
+    border-radius: 10px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.num_my_follow {
+    font-size: 30px;
+    color: #3c5a9a;
+    height: 30px;
+}
+
+
+.user_photo_edit{
+    height: auto;
+
+}
+.user_photo_edit img{
+    width: 100%;
+    border-radius: 10px;
+   
+}
+
+
+.container_change {
+    position: relative;
+    width: 50%;
+  }
+  
+  /* Make the image responsive */
+  .container_change img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the button and place it in the middle of the container/image */
+  .container_change .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.3;
+  }
+  
+  .container_change .btn:hover {
+    background-color: black;
+    
+  }
+  
+
+
+/* Media Query */
+
+@media screen and (max-width: 40rem) {
+    .profile {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4rem 0;
+    }
+
+    .profile::after {
+        display: none;
+    }
+    
+
+    .profile-image,
+    .profile-user-settings,
+    .profile-bio,
+    .profile-stats {
+        float: none;
+        width: auto;
+    }
+
+    .profile-image img {
+        width: 7.7rem;
+    }
+
+    .profile-user-settings {
+        flex-basis: calc(100% - 10.7rem);
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .profile-user-name {
+        font-size: 2.2rem;
+    }
+
+    .profile-edit-btn {
+        order: 1;
+        padding: 0;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .profile-edit-btn {
+        margin-left: 0;
+    }
+
+    .profile-bio {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+    }
+
+    .profile-edit-btn,
+    .profile-bio,
+    .profile-stats {
+        flex-basis: 100%;
+    }
+
+    .profile-stats {
+        order: 1;
+        margin-top: 1.5rem;
+    }
+
+    .profile-stats ul {
+        display: flex;
+        text-align: center;
+        padding: 1.2rem 0;
+        border-top: 0.1rem solid #dadada;
+        border-bottom: 0.1rem solid #dadada;
+    }
+
+    .profile-stats li {
+        font-size: 1.4rem;
+        flex: 1;
+        margin: 0;
+    }
+
+    .profile-stat-count {
+        display: block;
+    }
+}
+
+
+/* Spinner Animation */
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@supports (display: grid) {
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(3, auto);
+        grid-column-gap: 3rem;
+        align-items: center;
+    }
+
+    .profile-image {
+        grid-row: 1 / -1;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-gap: 2rem;
+    }
+
+    .profile-image,
+    .profile-user-settings,
+    .profile-stats,
+    .profile-bio,
+    .gallery-item,
+    .gallery {
+        width: auto;
+        margin: 0;
+    }
+
+    @media (max-width: 40rem) {
+        .profile {
+            grid-template-columns: auto 1fr;
+            grid-row-gap: 1.5rem;
+        }
+
+        .profile-image {
+            grid-row: 1 / 2;
+        }
+
+        .profile-user-settings {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 1rem;
+        }
+
+        .profile-edit-btn,
+        .profile-stats,
+        .profile-bio {
+            grid-column: 1 / -1;
+        }
+
+        .profile-user-settings,
+        .profile-edit-btn,
+        .profile-settings-btn,
+        .profile-bio,
+        .profile-stats {
+            margin: 0;
+        }
+    }
+}
+
+
+
+
+.gallery-item_feed {
+    cursor: pointer;
+    color: white;
+}
+
+.gallery-item_feed:hover .gallery-item-info,
+.gallery-item_feed:focus .gallery-item-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1200px) { 
+    .title_description_discovery label{
+        height: 15px; 
+        width: 40px ;
+        font-size:10px
+    }
+ }
+ 
+ @media (min-width: 991px) and (max-width: 1200px) { 
+    .title_description_discovery label{
+        height: 15px; 
+        width: 50px ;
+        font-size:10px
+    }
+ }
+ @media (min-width: 751px) and (max-width: 990px) { 
+    .photo_feed_description p{
+        font-size: 20px;
+    }
+    small{
+        font-size: 15px;
+    }
+    .title_description_discovery label{
+        height: 25px; 
+        width: 70px ;
+        font-size:15px
+    }
+    
+}
+@media (min-width: 701px) and (max-width: 750px) { 
+    .photo_feed_description p{
+        font-size: 15px;
+    }
+    small{
+        font-size: 15px;
+    }
+    .title_description_discovery label{
+        height: 15px; 
+        width: 50px ;
+        font-size: 10px;
+    }
+    
+}
+  
+ /* Landscape phone to portrait tablet */
+@media (min-width: 551px) and (max-width: 700px) { 
+    .photo_feed_description p{
+        font-size: 12px;
+    }
+    small:not(#like_number){
+        font-size:10px;
+    }
+    #like_number{
+        font-size: 15px
+    }
+    .title_description_discovery label{
+        height: 12px; 
+        width: 30px ;
+        font-size: 8px;
+    }
+}
+  
+ /* Landscape phones and down */
+@media (min-width: 531px) and (max-width: 550px) { 
+    .photo_feed_description p{
+            font-size: 10px;
+    }
+    #like_number{
+        font-size: 15px;
+    }
+    small::not(#like_number){
+            font-size: 10px;
+    }
+    .title_description_discovery label{
+        height: 12px; 
+        width: 30px ;
+        font-size: 8px;
+    }
+}
+@media (max-width: 530px) { 
+    .photo_feed_description p{
+        font-size: 10px;
+    }
+    #like_number{
+        font-size: 10px;
+    }
+    small{
+        font-size: 8px;
+    }
+    .title_description_discovery label{
+        height: 12px; 
+        width: 30px ;
+        font-size: 8px;
+    }
+}
+
+

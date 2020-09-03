@@ -50,11 +50,11 @@
         <div class="row w-100 my-2" ></div>
         <div class="row">
             <div class="col my-1 p-0  text-center text-xl-left">
-                <div class="btn-group-toggle mx-5" data-toggle="buttons">
-                    <label class="btn font-weight-bold active feed_left">
+                <div class="btn-group-toggle left_col mx-5 " data-toggle="buttons">
+                    <label class="btn font-weight-bold active ">
                         <input type="radio"  name="options" id="option1" autocomplete="off" checked>  Feeds
                     </label> <br>
-                    <label class="btn font-weight-bold feed_left">
+                    <label class="btn font-weight-bold ">
                         <input type="radio" name="options" id="option2" autocomplete="off"> Discover
                     </label>
                 </div>          
@@ -109,7 +109,9 @@
                           </div>
                     </div>
                 </form>
-                    
+                <input type='file' onchange="readURL(this);" />
+                <img id="blah" src="http://placehold.it/180" alt="your image" style="max-width:200px" onchange="readURL(this)"/>
+                <div class="row" style="height: 300px;"></div>
             </div>
             <div class="col p-0 m-0"></div>
         </div>

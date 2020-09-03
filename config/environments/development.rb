@@ -40,9 +40,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = { 
     address: 'smtp.gmail.com',
     port: 587,
-    domain:  'hcmut.edu.vn',
-    user_name: 'tien.pham.99@hcmut.edu.vn',
-    password:  '37levanhuu',
+    domain:  'gmail.com',
+    user_name: 'phamhongtien19@gmail.com',
+    password:  'ba7Levanhuu@',
     authentication: 'plain',
     enable_starttls_auto: true  
   }

@@ -23,10 +23,9 @@ class User < ApplicationRecord
     validates :email, length: {maximum:255, too_long: "%{count} characters is the maximum allowed"}, uniqueness:{case_sensitive: false}, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: "only allows email"}
     validates :password, length: {in: 8..64}
     after_save :create_user
-
     private
         def create_user
-            UserMailer.welcome_email(self).deliver_now
-            puts "sent #{self.firstName} #{self.lastName}"
+            puts "ok"
+            SendMailJob.set(wait: 10.seconds).perform_later(self)
         end
 end

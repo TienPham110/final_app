@@ -8,11 +8,13 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 #bootstrap
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.5.2'
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'rails-i18n'
 gem 'mysql2', '~>0.5.3'
+gem 'delayed_job_active_record'
+gem 'sidekiq'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
