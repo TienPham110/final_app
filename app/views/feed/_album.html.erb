@@ -1,10 +1,11 @@
 <div class="col-lg-6 photo_item d-flex justify-content-center">
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters photo_feed">
-                                <div class="col-md-6 photo_feed_avatar gallery-item_feed photo-stack">
-                                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/City_Sightseeing_Gozo_Hop-On_Hop-Off_open_top_bus_FPY_004.jpg/1200px-City_Sightseeing_Gozo_Hop-On_Hop-Off_open_top_bus_FPY_004.jpg'>
-                                        <img src='http://placekitten.com/300/200?image=2'>
-                                        <img src='http://placekitten.com/300/200?image=3'>
+                                <div class="col-md-6 photo_feed_avatar gallery-item_feed photo-stack" data-toggle="modal" data-target="#myModal">
+                                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/City_Sightseeing_Gozo_Hop-On_Hop-Off_open_top_bus_FPY_004.jpg/1200px-City_Sightseeing_Gozo_Hop-On_Hop-Off_open_top_bus_FPY_004.jpg'>
+                                        <%album.photos.each do |photos|%>
+                                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/City_Sightseeing_Gozo_Hop-On_Hop-Off_open_top_bus_FPY_004.jpg/1200px-City_Sightseeing_Gozo_Hop-On_Hop-Off_open_top_bus_FPY_004.jpg'>
+                                        <%end%>
                                         <div class="gallery-item-type rounded-circle">
 
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

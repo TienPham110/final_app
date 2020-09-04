@@ -81,11 +81,6 @@ GEM
     concurrent-ruby (1.1.7)
     connection_pool (2.2.3)
     crass (1.0.6)
-    delayed_job (4.1.8)
-      activesupport (>= 3.0, < 6.1)
-    delayed_job_active_record (4.1.4)
-      activerecord (>= 3.0, < 6.1)
-      delayed_job (>= 3.0, < 5)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -93,6 +88,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    i18n-js (3.7.1)
+      i18n (>= 0.6.6)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     jquery-rails (4.4.0)
@@ -230,12 +227,13 @@ DEPENDENCIES
   bootstrap (~> 4.5.2)
   byebug
   capybara (>= 2.15)
-  delayed_job_active_record
+  i18n-js
   jbuilder (~> 2.7)
   jquery-rails
   jquery-validation-rails
   listen (~> 3.2)
   mysql2 (~> 0.5.3)
+  popper_js
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-i18n
