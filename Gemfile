@@ -5,7 +5,7 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-# Use sqlite3 as the database for Active Record
+# Use pg as the database for Active Record
 #bootstrap
 gem 'jquery-rails'
 gem 'popper_js'
@@ -13,7 +13,7 @@ gem 'bootstrap', '~> 4.0.0'
 
 gem 'jquery-validation-rails'
 gem 'rails-i18n'
-gem 'mysql2', '~>0.5.3'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'sidekiq'
 gem "i18n-js"
 gem 'kaminari'

@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_09_06_085621) do
 
-  create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
@@ -22,14 +25,14 @@ ActiveRecord::Schema.define(version: 2020_09_06_085621) do
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
-  create_table "albums_photos", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "albums_photos", id: false, force: :cascade do |t|
     t.bigint "album_id", null: false
     t.bigint "photo_id", null: false
     t.index ["album_id", "photo_id"], name: "index_albums_photos_on_album_id_and_photo_id"
     t.index ["photo_id", "album_id"], name: "index_albums_photos_on_photo_id_and_album_id"
   end
 
-  create_table "follows", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "follows", force: :cascade do |t|
     t.bigint "follower_id"
     t.bigint "followed_user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -37,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_085621) do
     t.datetime "time"
   end
 
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.string "likeable_type"
     t.bigint "likeable_id"
@@ -45,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_085621) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "photos", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
@@ -60,14 +63,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_085621) do
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
-  create_table "photos_albums", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.bigint "album_id"
-    t.bigint "photo_id"
-    t.index ["album_id"], name: "index_photos_albums_on_album_id"
-    t.index ["photo_id"], name: "index_photos_albums_on_photo_id"
-  end
-
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
