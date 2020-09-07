@@ -1,0 +1,45 @@
+
+<%= form_for @photo, url: user_photos_path(user_id: params.require(:user_id)), html: {class: "row justify-content-center pt-3"}, local: true  do |form|%>
+                    <div class="col ml-">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <%=form.label :title%>
+                                    <%=form.text_field :title, class:"form-control" ,id:"title_add_photo" , style:"border: 2px solid rgb(209, 207, 207)" ,placeholder:"Photo Title"%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xl-6 col-md-6">
+                                <div class="form-group">
+                                    <label for="sharingMode">Sharing mode</label>
+                                    <select class="form-control" id="sharingMode" style="border: 2px solid rgb(209, 207, 207)">
+                                      <option>Public</option>
+                                      <option>Private</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pl-3 mb-3">
+                            <div class="col-lg-5 col-md-5 wrapper text-center p-5" style="border: 3px dashed #AAA ; height:200px; background-color:#fdf5f5; border-radius: 10px;">
+                                <div class="icons fa-4x" >
+                                    <i class="fa fa-plus" style="color: rgb(209, 207, 207)"></i> 
+                                </div>
+                                <%=form.label :image%>
+                                <%=form.file_field :image%>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <%= form.submit 'Save', class:"btn btn-success"%>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col mr-4">
+                        <div class="form-group">
+                            <%=form.label :description%>
+                            <%=form.text_area :description, class:"form-control rounded-1", rows:"3" ,placeholder:"Photo Description", style:"border: 2px solid rgb(209, 207, 207)"%>
+                          </div>
+                    </div>
+<%end%>

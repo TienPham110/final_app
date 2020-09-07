@@ -1,13 +1,37 @@
 {
-  "application.js": "/packs/js/application-0ec0f93a12fb80605bf3.js",
-  "application.js.map": "/packs/js/application-0ec0f93a12fb80605bf3.js.map",
+  "application.js": "/packs/js/application-30bd455418b7aeab6a87.js",
+  "application.js.map": "/packs/js/application-30bd455418b7aeab6a87.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-0ec0f93a12fb80605bf3.js"
+        "/packs/js/application-30bd455418b7aeab6a87.js"
       ],
       "js.map": [
-        "/packs/js/application-0ec0f93a12fb80605bf3.js.map"
+        "/packs/js/application-30bd455418b7aeab6a87.js.map"
+      ]
+    },
+    "hello_vue": {
+      "js": [
+        "/packs/js/hello_vue-7a9c00a261c6ef6acdd1.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_vue-7a9c00a261c6ef6acdd1.js.map"
+      ]
+    },
+    "jquery-3": {
+      "js": [
+        "/packs/js/jquery-3-b126d18f811efeee6d0b.js"
+      ],
+      "js.map": [
+        "/packs/js/jquery-3-b126d18f811efeee6d0b.js.map"
+      ]
+    },
+    "jquery": {
+      "js": [
+        "/packs/js/jquery-ab814231fae67dc48cec.js"
+      ],
+      "js.map": [
+        "/packs/js/jquery-ab814231fae67dc48cec.js.map"
       ]
     },
     "js": {
@@ -17,8 +41,24 @@
       "js.map": [
         "/packs/js/js-4e3261ffcabeb47df1f3.js.map"
       ]
+    },
+    "validation": {
+      "js": [
+        "/packs/js/validation-2305b59f21ab0a88646d.js"
+      ],
+      "js.map": [
+        "/packs/js/validation-2305b59f21ab0a88646d.js.map"
+      ]
     }
   },
+  "hello_vue.js": "/packs/js/hello_vue-7a9c00a261c6ef6acdd1.js",
+  "hello_vue.js.map": "/packs/js/hello_vue-7a9c00a261c6ef6acdd1.js.map",
+  "jquery-3.js": "/packs/js/jquery-3-b126d18f811efeee6d0b.js",
+  "jquery-3.js.map": "/packs/js/jquery-3-b126d18f811efeee6d0b.js.map",
+  "jquery.js": "/packs/js/jquery-ab814231fae67dc48cec.js",
+  "jquery.js.map": "/packs/js/jquery-ab814231fae67dc48cec.js.map",
   "js.js": "/packs/js/js-4e3261ffcabeb47df1f3.js",
-  "js.js.map": "/packs/js/js-4e3261ffcabeb47df1f3.js.map"
+  "js.js.map": "/packs/js/js-4e3261ffcabeb47df1f3.js.map",
+  "validation.js": "/packs/js/validation-2305b59f21ab0a88646d.js",
+  "validation.js.map": "/packs/js/validation-2305b59f21ab0a88646d.js.map"
 }

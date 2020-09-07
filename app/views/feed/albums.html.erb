@@ -38,7 +38,7 @@
                                 <input class="btn btn-default active font-weight-bold h-100 btn_log" type="button" value="Pham Tien" >
                             </li>
                             <li class="nav-item py-xl-2 py-sm-1">
-                                <input class="btn btn-default active font-weight-bold mx-lg-5 h-100 btn_log" type="button" value="Logout">
+                                 <%= button_to 'Logout', destroy_user_session_path, {class: "btn btn-default active font-weight-bold mx-lg-5 h-100 btn_log", method: "delete"}%>
                             </li>
                         </ul>
                     </div>
@@ -48,31 +48,25 @@
         <div class="row w-100 my-2" ></div>
         <div class="row">
             <div class="col my-1 p-0  text-center text-xl-left">
-                <div class="btn-group-toggle left_col mx-5" data-toggle="buttons">
-                    <label class="btn font-weight-bold active left">
-                        <input type="radio"  name="options" id="option1" autocomplete="off" checked >  Feeds
-                    </label> <br>
-                    <label class="btn font-weight-bold ">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> Discover
-                    </label>
-                </div>          
+                <div class="btn-group-toggle left_col mx-5">
+                    <button class="btn font-weight-bold active left">Feeds</button>
+                    <%=button_to 'Discovery', discovery_album_path, {method: "get", class:"btn font-weight-bold"}%>
+                </div>                   
             </div>
             <div class="col-xl-8 photo_feed_container">
                 <div class="row justify-content-center my-4">
-                     <div class="btn-group btn-group-toggle bnt-feed-toggle " data-toggle="buttons">
-                         <label class="btn font-weight-bold border-feed active" >
-                          
-                           <input type="radio" name="options" id="option1" autocomplete="off"> PHOTO
-                         </label>
-                         <label class="btn btn-purple font-weight-bold border-feed-album  border-feed checked">
-                           <input type="radio" name="options" id="option2" autocomplete="off"> ALBUM
-                         </label>
+                     <div class="btn-group " >
+                         <div class="btn-group  btn-feed-toggle ">
+                         <%=button_to 'PHOTO' , feedPhoto_path, {method: "get", class: "btn font-weight-bold border-feed ", style:"border-radius: 0px"}%>
+                         <button class="btn font-weight-bold border-feed border-feed-photo active" style="border-radius:0px;">ALBUM</button>
                        </div>
+                      </div>
                  </div>
                  <div class="row ">
                     <%@albums.each do |album| %>
                     <%= render partial: 'feed/album', locals: {album: album}%> 
                     <%end%>
+                    <%= paginate @albums, window: 4%>
                 </div>
                 
                 <div class="d-flex justify-content-center">

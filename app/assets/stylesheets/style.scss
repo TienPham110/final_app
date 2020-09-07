@@ -83,9 +83,10 @@ ul{
 
 .border-feed{
     border: 2px solid #3c5a9a;
+    border-radius: 0px, 0px, 0px, 0px;
     color: #3c5a9a;
 }
-.border-feed:active , .border-feed-album, .border-feed-photo{
+.border-feed:active ,.border-feed-photo{
     background-color: #3c5a9a;
     color: #ffffff;
 }
@@ -115,10 +116,10 @@ ul{
     font-size: 12px;
     height: auto;
 }
-.left_col > *{
+.left_col  input{
     color: #AAA;
 }
-.left_col .left, .left_col label:hover{
+.left_col .left, .left_col input:hover{
     color: #3c5a9a;
  }
 .fa-heart-o {
