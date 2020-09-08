@@ -26,10 +26,10 @@ class User < ApplicationRecord
     validates :firstName, :lastName, length: {maximum: 25}
     validates :email, length: {maximum:255, too_long: "%{count} characters is the maximum allowed"}, uniqueness:{case_sensitive: false}, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: "only allows email"}
     validates :password, length: {in: 8..64}
-    after_save :create_user
-    private
-        def create_user
-            puts "ok"
-            SendMailJob.perform_now(self)
-        end
+    # after_save :create_user
+    # private
+    #     def create_user
+    #         puts "ok"
+    #         SendMailJob.perform_now(self)
+    #     end
 end
