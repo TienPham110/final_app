@@ -30,6 +30,6 @@ class User < ApplicationRecord
     private
         def create_user
             puts "ok"
-            SendMailJob.set(wait: 10.seconds).perform_later(self)
+            SendMailJob.perform_now(self)
         end
 end
