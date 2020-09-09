@@ -1,5 +1,8 @@
 class UserController < ApplicationController
-    before_action :authenticate_user!
+    
+    def index
+        
+    end
     def new
 
     end
@@ -9,4 +12,11 @@ class UserController < ApplicationController
     def show
         
     end
+    def followers
+
+    end
+    def followings
+
+    end
+    
 end

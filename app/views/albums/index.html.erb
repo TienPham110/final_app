@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <%= stylesheet_link_tag 'style' %>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <%=render 'shared/header'%>
+        <div class="row w-100 my-2" ></div>
+        <div class="row">
+            <div class="col-xl-2 col-sm-12  my-1 p-0  text-center text-xl-left">
+                <div class="btn-group-toggle left_col mx-5">
+                  <%=button_to 'Feeds', feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
+                  <%=button_to 'Discovery', discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
+                </div>          
+            </div>
+
+            <div class="col-xl-8 col-sm-12 photo_feed_container">
+                <div class="row container_tab p-0">
+                        <div class="profile px-0">
+                
+                            <div class="profile-image">
+                
+                                <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
+                
+                            </div>
+                            <div class="row ">
+                                <div class="col">
+                                    <button type="button" class="btn btn-sm btn-primary btn_edit_profile">Edit Profile</button>
+                                </div>
+                            </div>
+                            <div class="profile-user-name font-weight-bold"><%="#{current_user.firstName} #{current_user.lastName}"%></div>
+                
+                            <div class="profile-stats">
+                                <ul class="p-0 left_col">
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(current_user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=current_user.photos.count%> </span> PHOTOS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold left"><span class="profile-stat-count left"><%=current_user.albums.count%></span> AlBUMS</li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(current_user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=current_user.photos.count%> </span> PHOTOS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(current_user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=current_user.photos.count%> </span> PHOTOS <%end%> </li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+                <div class="row justify-content-end px-xl-4 my-3">
+                    <div class="col-xl-2 col"><button type="button" class="btn btn-sm btn-success btn_add_photo p-0">Add Photo</button></div>
+                </div>
+                <div class="row justify-content-around flex px-2">
+                    
+                    
+                    <%current_user.albums.each do |album|%>
+                    <%= render partial: 'albums/album', locals: {album: album} %>
+                    <%end%>
+                   
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-sm-12 p-0 m-0">
+            </div>
+                
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+     <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title text-break" id="myModalLabel">aaaaaaaaaaaaaaaaaa</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <img src="" alt="PHOTO" id="photoModal">
+        </div>
+        <div class="modal-footer text-break" id="myModalDescription">
+            this is description
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%= javascript_pack_tag 'js' %>
+</html>

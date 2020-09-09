@@ -33,6 +33,15 @@
         <div class="container-fluid">
                     <p class="notice <%=p " alert alert-primary" unless notice.blank?%>"><%= notice %></p>
                     <p class="alert<%=p " alert-secondary" unless alert.blank?%>"><%= alert %></p>
+                    <p class="alert<%=p " alert-secondary" if resource.errors.any?%>">
+                        <% if resource.errors.any? %>
+                                <% resource.errors.full_messages.each do |message| %>
+                                <%= message %><br>
+                                <%end%>
+                        <%end%>
+                    </p>
+                        
+                    
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-5 col-sm-8 font-weight-bold text-center" style="font-size:40px; color:#3c5a9a">Fotobook Signup</div>

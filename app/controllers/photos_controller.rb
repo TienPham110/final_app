@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+    before_action :authenticate_user!
     def index
             
     end
@@ -14,6 +15,11 @@ class PhotosController < ApplicationController
             render :new
         end
 
+    end
+    def update
+        @photo = Photo.find(params[:id])
+        @photo.like += 1
+        @photo.save
     end
     private 
         def photo_params

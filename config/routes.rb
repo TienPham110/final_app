@@ -7,11 +7,8 @@ Rails.application.routes.draw do
   get 'discovery/album', to: 'home#disAlbum'
   get 'feed/album', to: 'home#feedAlbum', as: "feedAlbum"
   get 'feed/photo', to: 'home#feedPhoto', as: "feedPhoto"
-  resources :user do
+  resources :user, except: [:create, :destroy, :new] do
     resources :photos
     resources :albums
-  end
-  
-  
-  
+  end  
 end

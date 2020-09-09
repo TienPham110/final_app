@@ -1,8 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -41,3 +37,125 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%=stylesheet_link_tag 'style'%>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <%=render 'shared/header'%>
+        <div class="row w-100 my-2" ></div>
+        <div class="row">
+            <div class="col my-1 p-0  text-center text-xl-left">
+                <div class="btn-group-toggle left_col mx-5">
+                  <%=button_to 'Feeds', feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
+                  <%=button_to 'Discovery', discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
+                </div>          
+            </div>
+            <div class="col-xl-8 py-3 photo_feed_container">
+                <div class="row justify-content-center">
+                    <div class="col-11 font-weight-bold border-bottom py-3 px-0">
+                        Edit User Profile
+                    </div>
+                </div>
+                
+                    <div class="col">
+                        <div class="row mt-4 justify-content-center user_photo_edit">
+                            <div class="col-lg-4 ">
+                                <div class="row">
+                                    <div class="col-5 p-0 container_change">
+                                        <img src="https://pbs.twimg.com/profile_images/1105116920003538944/WqqKE4db.png" alt="avatar">
+                                        <button class="btn btn-sm">CHANGE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 justify-content-center">
+                            <div class="col-lg-4 p-0 font-weight-bold" style="color: #3c5a9a">
+                                Basic information   
+                            </div>
+                        </div>
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class:" justify-content-center pt-3" }) do |f| %>
+                        <div class="row">
+                            <%= f.label :"First Name", class:"col-lg-4 p-2 text-lg-right font-weight-bold" %>
+                            <div class="col-lg-4 p-0 form-group">
+                                    <%= f.text_field :firstName, autofocus: true, autocomplete: "firstName" , class:"form-control"%>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <%= f.label :"Last Name", class:"col-lg-4 p-2 text-lg-right font-weight-bold" %>
+                            <div class="col-lg-4 p-0 form-group">
+                                <%= f.text_field :lastName, autofocus: true, autocomplete: "lastName" , class:"form-control"%>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <%= f.label :Email, class:"col-lg-4 p-2 text-lg-right font-weight-bold" %>
+                            <div class="col-lg-4 p-0 form-group">
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control"%>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 p-0">
+                                <button class="btn btn-success font-weight-bold">Save</button>
+                            </div>
+                            
+                        </div>
+                        <%end%>
+                        <div class="row mt-5 justify-content-center">
+                            <div class="col-lg-4 p-0 font-weight-bold" style="color: #3c5a9a">
+                                Password  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 p-2 text-lg-right font-weight-bold">
+                                Current Password
+                            </div>
+                            <div class="col-lg-4 p-0">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="firstName" placeholder="*******">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 p-2 text-lg-right font-weight-bold">
+                                New Password
+                            </div>
+                            <div class="col-lg-4 p-0">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="lastName" placeholder="*******">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 p-2 text-lg-right font-weight-bold">
+                                Password Confirmation
+                            </div>
+                            <div class="col-lg-4 p-0">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="*******">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-4 p-0">
+                                <button class="btn btn-success font-weight-bold">Save</button>
+                            </div>
+                        </div>
+                        <div class="row m-5"></div>
+                    </div>
+                
+                    
+            </div>
+            <div class="col p-0 m-0"></div>
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+     
+      
+</body> 
+<script src="js.js"></script>
+</html>
