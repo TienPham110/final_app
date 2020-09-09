@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <%=javascript_pack_tag 'validation'%>
+    <%=javascript_pack_tag 'validation'%>  
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script> 
     <%= stylesheet_link_tag 'style'%>
-    
-
 </head>
 <body>
     <div class="container-fluid">
@@ -31,8 +29,6 @@
         </div>
         
         <div class="container-fluid">
-                    <p class="notice <%=p " alert alert-primary" unless notice.blank?%>"><%= notice %></p>
-                    <p class="alert<%=p " alert-secondary" unless alert.blank?%>"><%= alert %></p>
                     <p class="alert<%=p " alert-secondary" if resource.errors.any?%>">
                         <% if resource.errors.any? %>
                                 <% resource.errors.full_messages.each do |message| %>

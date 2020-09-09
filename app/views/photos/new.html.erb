@@ -14,14 +14,10 @@
         <div class="row w-100 my-2" ></div>
         <div class="row">
             <div class="col my-1 p-0  text-center text-xl-left ">
-                <div class="btn-group-toggle left_col mx-5 " data-toggle="buttons">
-                    <label class="btn font-weight-bold active">
-                        <input type="radio"  name="options" id="option1" autocomplete="off" checked>  Feeds
-                    </label> <br>
-                    <label class="btn font-weight-bold ">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> Discover
-                    </label>
-                </div>          
+                <div class="btn-group-toggle left_col mx-5">
+                  <%=button_to 'Feeds', feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
+                  <%=button_to 'Discovery', discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
+                </div>        
             </div>
             <div class="col-xl-8 py-3 photo_feed_container">
                 <div class="row justify-content-center">

@@ -14,6 +14,11 @@ $(document).ready(function() {
                 email: true,
                 maxlength: 255
             },
+            "user[current_password]": {
+                required: true,
+                minlength: 8,
+                maxlength: 64
+            },
             "user[password]": {
                 required: true,
                 minlength: 8,
@@ -40,10 +45,15 @@ $(document).ready(function() {
                 required: "Please enter your email",
                 maxlength: "Email must has maximum 255 characters long"
             },
+            "user[current_password]":{
+                required: "Please enter your password",
+                minlength: "Password must has minimum 8 characters long",
+                maxlength: "Password must has maximum 64 characters long"
+            },
             "user[password]":{
                 required: "Please enter your password",
                 minlength: "Password must has minimum 8 characters long",
-                maxlength: "First Name must has maximum 64 characters long"
+                maxlength: "Password must has maximum 64 characters long"
             },
             "user[password_confirmation]": {
                 required: "please enter your password again",
@@ -61,6 +71,9 @@ $(document).ready(function() {
             }
             else if(name == "user[email]"){
                 $("#errorEmail").html(error)
+            }
+            else if(name=="user[current_password]"){
+                $("#errorCurrPass").html(error)
             }
             else if(name=="user[password]"){
                 $("#errorPass").html(error)
