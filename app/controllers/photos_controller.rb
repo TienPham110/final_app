@@ -16,11 +16,6 @@ class PhotosController < ApplicationController
         end
 
     end
-    def update
-        @photo = Photo.find(params[:id])
-        @photo.like += 1
-        @photo.save
-    end
     private 
         def photo_params
             params.require(:photo).permit(:title, :description, :image)
