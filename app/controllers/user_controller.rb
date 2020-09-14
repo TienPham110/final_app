@@ -3,7 +3,7 @@ class UserController < ApplicationController
     # before_action :get_followings, only: [:followings]
     before_action :follow_id , only: [:follow, :unfollow]
     before_action :user_id, only: [:edit, :destroy]
-    before_action :authenticate_user!
+    
     def followers
         @user = User.find(user_id)
         render template: 'user/followers'

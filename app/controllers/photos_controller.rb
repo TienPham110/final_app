@@ -1,12 +1,11 @@
 class PhotosController < ApplicationController
     before_action :photo_params, only: [:create]
-    before_action :userId_params, only: [:index,:create]
     before_action :show_user_photo, only: [:index]
-    before_action :photoId_params, only: [:edit, :update, :destroy, :like, :unlike]
-    before_action :authenticate_user!
-    
+    # before_action :userId_params, only: [:index,:create]
+    # before_action :photoId_params, only: [:edit, :update, :destroy, :like, :unlike]
+
     def index
-        @user = User.find(userId_params)
+        @user = User.find(params[:user_id])
     end
 
     def new
@@ -15,7 +14,7 @@ class PhotosController < ApplicationController
     
     def create
         @photo = Photo.new(photo_params)
-        @photo.user_id = userId_params
+        @photo.user_id = params[:user_id]
         if @photo.save
             flash.keep[:success] = "Create success"
             redirect_to user_photos_path
@@ -27,11 +26,11 @@ class PhotosController < ApplicationController
     end
 
     def edit 
-        @photo = current_user.photos.find(photoId_params)
+        @photo = current_user.photos.find(params[:id])
     end
 
     def update
-        @photo = current_user.photos.find(photoId_params)
+        @photo = current_user.photos.find(params[:id])
         if @photo.update(photo_params)
             flash.keep[:success] = "Update success"
             redirect_to user_photos_path
@@ -42,7 +41,7 @@ class PhotosController < ApplicationController
     end
 
     def destroy
-        if @photo = Photo.find(photoId_params).destroy
+        if @photo = Photo.find(params[:id]).destroy
             flash.keep[:success] = "Delete success"
             redirect_to user_photos_path
         else
@@ -51,24 +50,23 @@ class PhotosController < ApplicationController
         end
     end
 
-    
-
     private 
         def photo_params
             params.require(:photo).permit(:title, :description, :image, :shared)
         end
-
-        def userId_params
-            params.require(:user_id)
-        end
-
-        def photoId_params
-            params.require(:id)
-        end
-
+        
         def show_user_photo
             @photos = current_user.photos.where(album_id:nil).order(created_at: :asc).page(params[:page]).per(8)
         end
+        # def userId_params
+        #     params.require(:user_id)
+        # end
+
+        # def photoId_params
+        #     params.require(:id)
+        # end
+
+        
         
         
         

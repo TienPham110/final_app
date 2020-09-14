@@ -1,8 +1,8 @@
 class AdminController < ApplicationController
     before_action :check_admin, only: [:show]
-    before_action :authenticate_user!
-    PER_PAGE = 20
     
+    PER_PAGE = 20
+
     def show #
         @user = User.find(params[:id])
 
