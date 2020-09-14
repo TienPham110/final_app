@@ -1,13 +1,11 @@
 class Album < ApplicationRecord
-    belongs_to :user
-    has_and_belongs_to_many :photos
+    belongs_to :user, counter_cache: :albums_count
+    has_many :photos, dependent: :destroy
+    
 
     has_many :likes, :as => :likeable, dependent: :destroy
-    validates :title, presence: true, length:{minimum: 10}
-    validates :description, length:{maximum: 255}
-    
-
-    
+    validates :title, presence: true, length:{maximum: 140}
+    validates :description, length:{maximum: 300}
     # before_validation :check_if_album_has_a_description
     
     # private

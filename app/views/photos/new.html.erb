@@ -11,6 +11,12 @@
 <body>
     <div class="container-fluid" style="background-color: #fdf5f5">
         <%=render 'shared/header'%>
+        <div class="container-fluid my-3">
+            <p class="alert<%if !flash[:error].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:error] %></p>
+            <p class="alert<%if !flash[:success].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:success] %></p>
+            <p class="notice <%if !notice.blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= notice %></p>
+            <p class="alert <%if !alert.blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= alert %></p>
+        </div>
         <div class="row w-100 my-2" ></div>
         <div class="row">
             <div class="col my-1 p-0  text-center text-xl-left ">

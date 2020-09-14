@@ -7,7 +7,7 @@
     <%=javascript_pack_tag 'validation'%>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
-    
+    <%=javascript_pack_tag 'js'%>
     <%=stylesheet_link_tag 'style'%>
 </head>
 <body>
@@ -22,7 +22,7 @@
                         <%end%>
                     </p>       
         </div>
-        <div class="row w-100 my-2" ></div>
+        
         <div class="row">
             <div class="col my-1 p-0  text-center text-xl-left">
                 <div class="btn-group-toggle left_col mx-5">
@@ -38,12 +38,16 @@
                 </div>
                 
                     <div class="col">
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put , id:"signup-form"}) do |f| %>
                         <div class="row mt-4 justify-content-center user_photo_edit">
                             <div class="col-lg-4 ">
-                                <div class="row">
-                                    <div class="col-5 p-0 container_change">
-                                        <img src="https://pbs.twimg.com/profile_images/1105116920003538944/WqqKE4db.png" alt="avatar">
-                                        <button class="btn btn-sm">CHANGE</button>
+                                <div class="row"  style="border:1px  black">
+                                    <div class="col-5 p-0 container_change" >
+                                        <%= image_tag(current_user.avatar.url, id:"avatar_my") %>   
+                                        <label for="button_change_avatar">
+                                            <div class="btn btn-sm font-weight-bold">CHANGE</div>
+                                        </label>
+                                        <%=f.file_field :avatar , id:"button_change_avatar", style:"display:none" %>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +57,7 @@
                                 Basic information   
                             </div>
                         </div>
-                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put , id:"signup-form"}) do |f| %>
+                        
                         <div class="row field">
                             <%= f.label :"First Name", class:"col-lg-4 p-2 text-lg-right font-weight-bold" %>
                             <div class="col-lg-4 p-0 form-group">

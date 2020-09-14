@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-dark navbar-expand-lg justify-content-between py-lg-0" style="background-color: #3c5a9a">
+                    <nav class="navbar w-75 justify-content-start mx-lg-5" >
+                        <a class="navbar-brand font-weight-bold mx-lg-4 " href="#">Fotobook</a>
+                    <form class="form-inline w-50" >
+                        <input class="form-control w-100" type="search" placeholder="Search Photo / Album" aria-label="Search">
+                    </form>
+                    </nav>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item pl-2">
+                                <a href="#" class="nav-link">
+                                    <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzFoduz8sVaT-9UmdS4b7iUdt1msFeu8xm6Q&usqp=CAU" style="height: 40px; width:40px">
+                                </a>
+                            </li>
+                            <li class="nav-item py-xl-2 py-sm-1">
+                                <input class="btn btn-default active font-weight-bold h-100 btn_log" type="button" value="Pham Tien" >
+                            </li>
+                            <li class="nav-item py-xl-2 py-sm-1">
+                                <input class="btn btn-default active font-weight-bold mx-lg-5 h-100 btn_log" type="button" value="Logout">
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row w-100 my-2" ></div>
+        <div class="row">
+            <div class="col-xl-2 col-sm-12  my-1 p-0  text-center text-xl-left">
+                <div class="btn-group-toggle left_col mx-5" data-toggle="buttons">
+                    <label class="btn font-weight-bold active ">
+                        <input type="radio"  name="options" id="option1" autocomplete="off" checked>  Feeds
+                    </label> <br>
+                    <label class="btn font-weight-bold ">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Discover
+                    </label>
+                </div>          
+            </div>
+
+            <div class="col-xl-8 col-sm-12 photo_feed_container">
+                <div class="row container_tab p-0">
+                        <div class="profile px-0">
+                
+                            <div class="profile-image">
+                
+                                <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
+                
+                            </div>
+                            <div class="row ">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-6 font-weight-bold">
+                                            <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                                <label class="btn btn-outline-warning btn-sm active m-0 p-0" style="width:100px">
+                                                    <input type="checkbox" autocomplete="off" checked> unfollow
+                                                </label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile-user-name font-weight-bold">PHAM TIEN</div>
+                
+                            <div class="profile-stats">
+                                <ul class="p-0 left_col">
+                                    <li class="px-1 border-right font-weight-bold" ><span class="profile-stat-count">130</span> PHOTOS</li>
+                                    <li class="px-1 border-right font-weight-bold" ><span class="profile-stat-count">210</span>AlBUMS</li>
+                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count">188</span> FOLLOWINGS</li>
+                                    <li class="px-1  font-weight-bold"><span class="profile-stat-count">206</span> FOLLOWERS</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="row justify-content-around px-4">
+                    
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center"><img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="avatar" class="rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold">PHAM TIEN</div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow">22</div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle btn_unfollow ml-auto py-1" data-toggle="buttons">
+                                            <label class="btn btn-outline-warning btn-sm active m-0 p-0">
+                                                <input type="checkbox" autocomplete="off" checked> unfollow
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-sm-12 p-0 m-0">
+            </div>
+                
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+     <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">aaaaaaaaaaaaaaaaaa</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <img src="" alt="PHOTO" id="photoModal">
+        </div>
+        <div class="modal-footer">
+            ácsacacas các sấccas các sa cá cá cá csa cá c sac sa cá cá csa csa ấccsacas cá csa ca ca cấccs ấcs cấc cấcscacas cấcsca 
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js.js"></script>
+</html>

@@ -19,6 +19,7 @@ gem "i18n-js"
 gem 'kaminari'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -61,6 +62,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem "rails-controller-testing", "~> 1.0.5"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

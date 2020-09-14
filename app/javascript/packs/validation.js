@@ -56,7 +56,7 @@ $(document).ready(function() {
                 maxlength: "Password must has maximum 64 characters long"
             },
             "user[password_confirmation]": {
-                required: "please enter your password again",
+                required: "Please enter your password again",
                 equalTo:"Please enter the same password"
             }
         },

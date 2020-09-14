@@ -2,16 +2,30 @@
                         <div class="row justify-content-center">
                             <div class="col-9 col my-2">
                                 <div class="row">
-                                    <div class="col p-0 photo_tab photo_feed_avatar" " data-toggle="modal" data-target="#myModal">
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTWPpNd74Agn_ctVoDn7PE3evqsDFFxA_R8Rw&usqp=CAU" alt="" class="">
+                                    <div class="col p-0 photo_tab photo_feed_avatar container_change_button_photo " data-toggle="modal" data-target="#myModal">
+                                        <%=image_tag(photo.image.url, class:"img_my_profile")%>
+                                        <%if current_user.id == @user.id%>
+                                        <%=button_to 'EDIT', edit_user_photo_path(id: photo.id),{ class:"btn btn-sm font-weight-bold", method:"get"}%> 
+                                        <%end%>     
                                     </div>
+                                    <div class="gallery-item-type rounded-circle <%=p " d-none" if photo.shared%>" >
+                                    
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
+                                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+                                        </svg>
+                    
+                                    </div>
+                                    
                                 </div>
                                 <div class="row photo_tab_title ">
                                     <div class="col text-center title">
                                         <%=photo.title %> 
-                                    </div>
-                                    
+                                    </div>  
                                 </div>
-                            </div>  
+                            </div> 
+                             
                         </div>
+                        
                     </div>
+                    

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_035429) do
+ActiveRecord::Schema.define(version: 2020_09_13_083258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,6 @@ ActiveRecord::Schema.define(version: 2020_09_09_035429) do
     t.bigint "user_id", null: false
     t.integer "like", default: 0
     t.index ["user_id"], name: "index_albums_on_user_id"
-  end
-
-  create_table "albums_photos", id: false, force: :cascade do |t|
-    t.bigint "album_id", null: false
-    t.bigint "photo_id", null: false
-    t.index ["album_id", "photo_id"], name: "index_albums_photos_on_album_id_and_photo_id"
-    t.index ["photo_id", "album_id"], name: "index_albums_photos_on_photo_id_and_album_id"
   end
 
   create_table "follows", force: :cascade do |t|
@@ -61,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_09_09_035429) do
     t.bigint "photoFileSize"
     t.string "photoType"
     t.string "image"
+    t.bigint "album_id"
+    t.index ["album_id"], name: "index_photos_on_album_id"
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
@@ -88,12 +83,15 @@ ActiveRecord::Schema.define(version: 2020_09_09_035429) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "avatar"
+    t.integer "photos_count", default: 0
+    t.integer "albums_count", default: 0
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "albums", "users"
-  add_foreign_key "albums_photos", "albums"
-  add_foreign_key "albums_photos", "photos"
+  add_foreign_key "photos", "albums"
   add_foreign_key "photos", "users"
 end

@@ -1,5 +1,5 @@
 
-<%= form_for @photo, url: user_photos_path(user_id: params.require(:user_id)), html: {class: "row justify-content-center pt-3"}, local: true  do |form|%>
+<%= form_for @photo, url: user_photos_path(user_id: params.require(:user_id)), html: {class: "row justify-content-center pt-3 mx-md-4"}, local: true  do |form|%>
                     <div class="col ml-">
                         <div class="row">
                             <div class="col">
@@ -14,18 +14,16 @@
                                 <div class="form-group">
                                     
                                     <%=form.label :"Sharing Mode"%>
-                                    <%=form.select :shared, options_for_select([['Public', true], ['Private', false]]), html: {class:"form-control", style:"border: 2px solid rgb(209, 207, 207)"} %>
+                                    <%=form.select :shared, options_for_select([['Public', true], ['Private', false]], true) %>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="row pl-3 mb-3">
-                            <div class="col-lg-5 col-md-5 wrapper text-center p-5" style="border: 3px dashed #AAA ; height:200px; background-color:#fdf5f5; border-radius: 10px;">
-                                <div class="icons fa-4x" >
-                                    <i class="fa fa-plus" style="color: rgb(209, 207, 207)"></i> 
-                                </div>
-                                <%=form.label :image%>
-                                <%=form.file_field :image%>
-                            </div>
+                            <label for="photo_image"  class="col-6 px-0 image-hover">
+                                <%= image_tag 'plus.png' , id:"image_label"%>
+                            </label>
+                        <%=form.file_field :image, style:"display:none"%>
                         </div>
                         <div class="row">
                             <div class="col">
@@ -37,7 +35,7 @@
                     <div class="col mr-4">
                         <div class="form-group">
                             <%=form.label :description%>
-                            <%=form.text_area :description, class:"form-control rounded-1", rows:"3" ,placeholder:"Photo Description", style:"border: 2px solid rgb(209, 207, 207)"%>
+                            <%=form.text_area :description, class:"form-control rounded-1", rows:"3" ,placeholder:"Photo Description", style:"border: 2px solid rgb(209, 207, 207)",size:"1x5"%>
                           </div>
                     </div>
 <%end%>

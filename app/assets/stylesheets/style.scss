@@ -7,7 +7,9 @@ img{
 .btn_log{
     background-color: #3c5a9a ;border: 0px; color:#ffffff
 }
-
+#photo_shared{
+    border: 2px solid rgb(209, 207, 207); 
+}
 .login-title
 {
     color: #555;
@@ -64,21 +66,7 @@ ul{
 }
 
 
-.photo_follow{
-    background-color: #fdf5f5;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px #AAA;
 
-}
-.photo_follow_avatar{
-    height: auto;
-}
-.photo_follow_avatar img{
-    max-width: 100%;
-    min-height: 100px;
-    border-radius: 5px 0px 0px 5px;
-    box-shadow: 0px 1px 3px #AAA;
-}
 
 
 .border-feed{
@@ -323,23 +311,7 @@ img{
 
 
 
-.following{
-    background-color :yellow;
-    color: #0f0404;
-}
 
-.unfollowed{
-    background-color: white!important;
-    color: yellow!important;
-}
-
-.visually-hidden {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-}
 
 
 
@@ -371,20 +343,20 @@ img{
     z-index: 1;
   }
   .photo-stack img:nth-child(2) {
-    transform: rotate3d(0,0,1,6deg);
+    transform: rotate3d(0,0,1,9deg);
   }
   .photo-stack img:nth-child(3) {
-    transform: rotate3d(0,0,1,3deg);
+    transform: rotate3d(0,0,1,6deg);
   }
   
   .photo-stack:hover img:nth-child(1) {
     transform: scale(1.02);
   }
   .photo-stack:hover img:nth-child(2) {
-    transform: translate3d(10%, 0, 0) rotate3d(0,0,1,8deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0,0,1,-6deg);
   }
   .photo-stack:hover img:nth-child(3) {
-    transform: translate3d(-10%, 0, 0) rotate3d(0,0,1,5deg);
+    transform: translate3d(-10%, 0, 0) rotate3d(0,0,1,6deg);
   }
   
 
@@ -425,7 +397,8 @@ img{
 
 .profile-image img {
     border-radius: 50%;
-    width: 80%;
+    width: 200px;
+    height: 200px;
 }
 
 .profile-user-settings,
@@ -510,11 +483,7 @@ img{
     min-width: 200px;
 }
 
-.btn_unfollow label{
-    border-radius: 10px;
-    width: 100%;
-    font-weight: bold;
-}
+
 
 .num_my_follow {
     font-size: 30px;
@@ -533,40 +502,6 @@ img{
    
 }
 
-
-.container_change {
-    position: relative;
-    width: 50%;
-  }
-  
-  /* Make the image responsive */
-  .container_change img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Style the button and place it in the middle of the container/image */
-  .container_change .btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #555;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    opacity: 0.3;
-  }
-  
-  .container_change .btn:hover {
-    background-color: black;
-    
-  }
-  
 
 
 /* Media Query */
@@ -592,7 +527,8 @@ img{
     }
 
     .profile-image img {
-        width: 7.7rem;
+        width: 150px;
+        height: 150px;
     }
 
     .profile-user-settings {
@@ -655,11 +591,7 @@ img{
 
 /* Spinner Animation */
 
-@keyframes loader {
-    to {
-        transform: rotate(360deg);
-    }
-}
+
 
 
 @supports (display: grid) {
@@ -749,6 +681,7 @@ img{
         width: 40px ;
         font-size:10px
     }
+    
  }
  
  @media (min-width: 991px) and (max-width: 1200px) { 
@@ -757,7 +690,9 @@ img{
         width: 50px ;
         font-size:10px
     }
+    
  }
+ 
  @media (min-width: 751px) and (max-width: 990px) { 
     .photo_feed_description p{
         font-size: 20px;
@@ -770,6 +705,7 @@ img{
         width: 70px ;
         font-size:15px
     }
+    
     
 }
 @media (min-width: 701px) and (max-width: 750px) { 
@@ -784,6 +720,7 @@ img{
         width: 50px ;
         font-size: 10px;
     }
+    
     
 }
   
@@ -803,6 +740,9 @@ img{
         width: 30px ;
         font-size: 8px;
     }
+    
+    
+    
 }
   
  /* Landscape phones and down */
@@ -821,8 +761,10 @@ img{
         width: 30px ;
         font-size: 8px;
     }
+    
+    
 }
-@media (max-width: 530px) { 
+@media (max-width: 500px) { 
     .photo_feed_description p{
         font-size: 10px;
     }
@@ -837,6 +779,173 @@ img{
         width: 30px ;
         font-size: 8px;
     }
+    
+    .photo_follow_avatar img{
+        min-height: 300px;
+    }
 }
 
+img.img_my_profile{
+    min-height:230px;
+}
+.image-hover{
+    &:hover {
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+    cursor: pointer;
+  }
+/*change avatar*/
+.container_change {
+    position: relative;
+    width: 50%;
+  }
+  
 
+  .container_change img {
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+    min-width: 150px;
+  }
+  
+ 
+  .container_change .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 20px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.3;
+    width: 150px;
+  }
+  
+  .container_change .btn:hover {
+    background-color: black;
+    opacity: 0.7;   
+  }
+  
+
+  #image_label{
+    border:3px dashed #AAA ; width:100%;
+    border-radius: 10px;
+  }
+
+  /*edit photo*/
+
+  .container_change_button_photo {
+    position: relative;
+    width: 80%;
+  }
+  
+  
+ 
+  .container_change_button_photo .btn {
+    position: absolute;
+    left: 70%;
+    bottom:-5%;
+    transform: translate(-10%, -100%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 12px;
+   
+    padding-left: 0.6rem;
+    border: none;
+    cursor: pointer;    
+    border-radius: 5px;
+    opacity: 0.3;
+    width: 50px;
+    z-index: 1000;
+  }
+  
+  .container_change_button_photo .btn:hover {
+    background-color: black;
+    opacity: 0.7;   
+  }
+
+  .super{
+      margin-top: -38px;
+  }
+/*avatar follower*/
+  .photo_follow{
+    background-color: #fdf5f5;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #AAA;
+
+}
+.photo_follow_avatar{
+    height: auto;
+}
+.photo_follow_avatar img{
+    max-width: 100%;
+    min-height: 192px;
+    border-radius: 5px 0px 0px 5px;
+    box-shadow: 0px 1px 3px #AAA;
+}
+
+/*edit_album*/
+#edit_album_image img{
+    border-radius: 10px;
+    height: 270px;
+    width: 100%;
+}
+
+.container_del_button_album {
+    position: relative;
+    width: 80%;
+  }
+  
+ 
+  .container_del_button_album .btn {
+    position: absolute;
+    left: 80%;
+    bottom: 75%;
+    transform: translate(-10%, -100%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 12px;
+    padding-left: 0.6rem;
+    border: none;
+    cursor: pointer;    
+    opacity: 0.3;
+    width: 27px;
+    z-index: 1000;
+  }
+  
+  .container_del_button_album .btn:hover {
+    background-color: black;
+    opacity: 0.7;   
+  }
+  /*follow button*/
+
+.following{
+    background-color: yellow;
+    color: white;  
+    border-radius: 10px;
+    width: 100%;
+    font-weight: bold;
+    text-decoration: none;
+} 
+
+.follow{
+    background-color:white;
+    color: yellow;
+    border-radius: 10px;
+    border: 1px solid yellow;
+    width: 100%;
+    font-weight: bold;
+    text-decoration:none;
+}
+.follow a{
+    text-decoration:none;
+}
+  

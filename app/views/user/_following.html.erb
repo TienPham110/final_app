@@ -1,0 +1,31 @@
+<div class="col-md-6 col-xl-3 my-3">
+                        <div class="row justify-content-center">
+                            <div class="col col-11 py-3 photo_follow">
+                                <div class="row photo_follow_avatar justify-content-center">
+                                    <div class="col-10 text-center">
+                                    <%= image_tag(following.avatar.url,alt:"avatar" ,class:"rounded-circle")%>
+                                    </div>
+                                </div>
+                                <div class="row m-2">
+                                    <div class="col text-center font-weight-bold"><%="#{following.firstName} #{following.lastName}"%></div>
+                                </div>
+                                <div class="row mb-2 justify-content-center">
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow"><%=following.photos.where(album_id:nil).count%></div>
+                                        <small>PHOTOS</small>
+                                    </div>
+                                    <div class="col-4 text-center font-weight-bold">
+                                        <div class="num_my_follow"><%=following.albums.count%></div>
+                                        <small>AlBUMS</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center font-weight-bold">
+                                        <span class="btn-group-toggle ml-auto py-1">
+                                            <%=button_to "unfollow", unfollow_user_path(follow_id: following.id), class:"btn btn-sm  m-0 p-0 following",  method: :post, :data => {:confirm => 'Are you sure?'}%>     
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>

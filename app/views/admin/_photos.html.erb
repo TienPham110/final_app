@@ -1,0 +1,13 @@
+<div class="row  px-2">
+         <%photos.each do |photo|%>           
+                    <div class="col-md-6 col-xl-2 p-0 m-4  photo_tab manage-item">
+                        
+                        <%=image_tag(photo.image.url, alt:"album" ,class:"manage-image")%>                        
+                        <div class="top-left p-1 d-flex justify-content-between">
+                            <span><%=photo.title%></span>
+                            <i class="fa fa-edit" style="font-size:1rem"></i>
+                        </div>
+                    </div>
+        <%end%>
+           
+</div> 

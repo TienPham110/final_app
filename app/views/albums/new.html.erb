@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <%=stylesheet_link_tag 'style'%>
+    <%=javascript_pack_tag 'js'%>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <%=render 'shared/header'%>
+        <div class="container-fluid my-3">
+                    <p class="alert<%if !flash[:error].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:error] %></p>
+                     <p class="alert<%if !flash[:success].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:success] %></p>
+                </div>
+        <div class="row w-100 my-2" ></div>
+        <div class="row">
+            <div class="col my-1 p-0  text-center text-xl-left ">
+                <div class="btn-group-toggle left_col mx-5">
+                  <%=button_to 'Feeds', feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
+                  <%=button_to 'Discovery', discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
+                </div>        
+            </div>
+            <div class="col-xl-8 py-3 photo_feed_container">
+                <div class="row justify-content-center">
+                    <div class="col-11 font-weight-bold border-bottom py-3 px-0">
+                        New Album
+                    </div>
+                </div>
+                <%=render 'albums/newAlbum' %>
+                <div class="row" style="height: 300px;"></div>
+            </div>
+            <div class="col p-0 m-0"></div>
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div> 
+</body> 
+</html>

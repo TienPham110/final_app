@@ -9,14 +9,15 @@
     <%= stylesheet_link_tag 'style' %>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <style>
-        
-    </style>
+
 </head>
 <body>
     <div class="container-fluid" style="background-color: #fdf5f5">
         <%=render 'shared/header'%>
-        <div class="row w-100 my-2" ></div>
+        <div class="container-fluid my-3">
+                    <p class="alert<%if !flash[:error].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:error] %></p>
+                     <p class="alert<%if !flash[:success].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:success] %></p>
+                </div>
         <div class="row">
             <div class="col-xl-2 col-sm-12  my-1 p-0  text-center text-xl-left">
                 <div class="btn-group-toggle left_col mx-5">
@@ -30,39 +31,56 @@
                         <div class="profile px-0">
                 
                             <div class="profile-image">
-                
-                                <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
+                                <%= image_tag(@user.avatar.url, alt:"avatar")  %>
                 
                             </div>
+                            
+                            <%if current_user.id == @user.id%>
                             <div class="row ">
                                 <div class="col">
                                     <%= button_to 'Edit Profile', edit_user_registration_path, {class:"btn btn-sm btn-primary btn_edit_profile", method:'get'}%>
                                 </div>
                             </div>
-                            <div class="profile-user-name font-weight-bold"><%="#{current_user.firstName} #{current_user.lastName}"%></div>
+                            <%else%>
+                                <div class="row ">
+                                <div class="col-lg-3">
+                                   <% if current_user.followings.ids.include?(@user.id)%>                                               
+                                        <%=button_to "unfollow", unfollow_user_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                    <%else%>
+                                        <%=button_to "follow", follow_user_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                    <% end %>
+                                </div>
+                                </div>
+                            <%end%>
+                            <div class="profile-user-name font-weight-bold"><%="#{@user.firstName} #{@user.lastName}"%></div>
                 
                             <div class="profile-stats">
                                 <ul class="p-0 left_col">
-                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=current_user.photos.count%></span> PHOTOS</li>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(current_user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=current_user.albums.count%> </span> ALBUMS <%end%> </li>
-                                    <li class="px-1 border-right font-weight-bold" ><span class="profile-stat-count"><%=current_user.followings.count%></span> FOLLOWINGS</li>
-                                    <li class="px-1  font-weight-bold"><span class="profile-stat-count"><%=current_user.followers.count%></span> FOLLOWERS</li>
+                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.photos.where(album_id:nil).count%></span> PHOTOS</li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.count%></span> ALBUMS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to followings_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followings.count%></span> FOLLOWINGS <%end%> </li>
+                                    <li class="px-1  font-weight-bold " ><%= link_to followers_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followers.count%></span> FOLLOWERS <%end%> </li>
                                 </ul>
                             </div>
                         </div>
                 </div>
+                <%if current_user.id == @user.id%>
                 <div class="row justify-content-end px-xl-4 my-3">
-                    <div class="col-xl-2 col"><%=button_to 'Add Photo', new_user_photo_path, class:"btn btn-sm btn-success btn_add_photo p-0", method: "get"%></div>
-                    
+                    <div class="col-xl-2 col"><%=button_to 'Add Photo', new_user_photo_path, class:"btn btn-sm btn-success btn_add_photo p-0", method: "get"%></div>    
                 </div>
-                <div class="row justify-content-around flex px-2">
+                <%end%>
+                <div class="row flex px-2">
                     
                     
-                    <%current_user.photos.each do |photo|%>
+                    <%@photos.each do |photo|%>
                     <%= render partial: 'photos/photo', locals: {photo: photo} %>
                     <%end%>
-                   
+
                 </div>
+                <div class="d-flex justify-content-center">
+                    <%= paginate @photos%>
+                </div>
+                
             </div>
 
             <div class="col-xl-2 col-sm-12 p-0 m-0">
