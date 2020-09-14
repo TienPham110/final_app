@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
     before_action :show_photo, only: [:feedPhoto , :disPhoto]
     before_action :show_album, only: [:feedAlbum , :disAlbum]
-    before_action :authenticate_user!
     
     def feedAlbum
         render template: "feed/albums"

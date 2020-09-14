@@ -29,10 +29,20 @@ class User < ApplicationRecord
     #upload avatar
     mount_uploader :avatar, AvatarUploader
     after_create :create_user
+
+    def name 
+      [firstName, lastName].select(&:present?).join(' ')
+    end
+
+    def avatar_name
+      [firstName.chars.first, lastName.chars.first].compact.join
+    end
+    
     private
         def create_user
             SendMailJob.perform_now(self)
         end
+
 
         
 end

@@ -54,10 +54,11 @@ class PhotosController < ApplicationController
         def photo_params
             params.require(:photo).permit(:title, :description, :image, :shared)
         end
-        
+
         def show_user_photo
             @photos = current_user.photos.where(album_id:nil).order(created_at: :asc).page(params[:page]).per(8)
         end
+        
         # def userId_params
         #     params.require(:user_id)
         # end

@@ -26,7 +26,7 @@
 $(document).ready(function() {
   var index
   $('.photo_item .photo_feed_avatar').click(function(){
-    photo_item = $(this).parent().parent().parent()
+    photo_item = $(this).closest('.photo_item')
     index = photo_item.index()
     src = $("img:first-child",this).attr("src")
       title = $(".title").map(function(){
@@ -42,27 +42,7 @@ $(document).ready(function() {
     })
 
 })
-$(document).ready(function() {
-  var index
-  $('.photo_item .photo_tab_album').click(function(){
-    photo_item = $(this).parent().parent().parent().parent().parent().parent()
-    index = photo_item.index()
-    console.log("a")
-    src = $("img:first-child",this).attr("src")
-      title = $(".title").map(function(){
-        return $(this).text()
-      })
-      description = $(".description").map(function(){
-        return $(this).text()
-      })
-      $("#myModal").show()
-      $("#photoModal").attr("src",src)
-      $("#myModalLabel").text(title[index])
-      $("#myModalDescription").text(description[index])
-      console.log(src)
-    })
-  
-})
+
 // $(document).ready(function(){
 //   $(".btn_discovery_follow label").click(function(){
 //     if($(this).hasClass("following")){
