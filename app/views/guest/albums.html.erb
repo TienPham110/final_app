@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%= javascript_pack_tag 'js'%>
+    <%= stylesheet_link_tag 'style'%>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <%=render 'shared/headerGuest'%>
+        <div class="row w-100 my-2" ></div>
+        <div class="row">
+            <div class="col my-1 p-0  text-center text-xl-left">                 
+            </div>
+            <div class="col-xl-8 photo_feed_container">
+                <div class="row justify-content-center my-4">
+                     <div class="btn-group " >
+                         <div class="btn-group  btn-feed-toggle ">
+                         <%=button_to 'PHOTO' , guest_photos_path, {method: "get", class: "btn font-weight-bold border-feed ", style:"border-radius: 0px"}%>
+                         <button class="btn font-weight-bold border-feed border-feed-photo active" style="border-radius:0px;">ALBUM</button>
+                       </div>
+                      </div>
+                 </div>
+                 <div class="row ">
+                    <%@albums.each do |album| %>
+                      <%= render partial: 'guest/album', locals: {album: album}%> 
+                    <%end%>  
+                </div>
+                <div class="row w-100 " style="height:500px"></div>
+                <div class="d-flex justify-content-center">
+                    <%= paginate @albums%>
+                  </div>
+            </div>
+            <div class="col p-0 m-0"></div>
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+
+    <%@albums.each do |album|%>
+      <%= render partial: 'shared/modalAlbum', locals:{album: album}%>
+    <%end%> 
+</body>
+
+</html>
+      

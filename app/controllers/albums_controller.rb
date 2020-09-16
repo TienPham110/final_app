@@ -1,13 +1,15 @@
 class AlbumsController < ApplicationController
-    
-    before_action :photo_params, only: [:create]
-    before_action :show_user_album, only: [:index]
-    # before_action :userId_params, only: [:index,:create, :update]
-    # before_action :albumId_params, only: [:edit, :update, :destroy]
-    # before_action :photoId_params, only: [:destroy]
-    
+    before_action :photo_params, only: [:create, :update]
+
+    PER_SIZE = 20
+
     def index
         @user = User.find(params[:user_id])
+        if current_user.id == (params[:user_id]).to_i
+            @albums = @user.albums.order(created_at: :desc).page(params[:page]).per(PER_SIZE)
+        else
+            @albums = @user.albums.where(shared:true).order(created_at: :desc).page(params[:page]).per(PER_SIZE)
+        end
     end
 
     def new
@@ -23,7 +25,7 @@ class AlbumsController < ApplicationController
             @album.photos << @photo
             redirect_to user_albums_path
         else
-            flash.keep[:error] = "You must fill in the title and upload image less than 2Mb"
+            flash.keep[:error] = "You must fill in the title and upload image less than 5Mb"
             redirect_to new_user_album_path
         end
     end
@@ -72,23 +74,6 @@ class AlbumsController < ApplicationController
             params.require(:photo).permit(:title, :description, :shared, :image)
         end
 
-        def show_user_album
-            @albums = current_user.albums.all.order(created_at: :asc).page(params[:page]).per(8)
-        end
-
-        # def userId_params
-        #     params.require(:user_id)
-        # end
-
-        # def albumId_params
-        #     params.require(:id)
-        # end
-
-        
-        # def photoId_params
-        #     params.require(:photo_id)
-        # end
-        
         
      
 end

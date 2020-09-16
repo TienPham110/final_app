@@ -12,21 +12,29 @@
                                             <span class="font-weight-bold font-color text-center text-break p-1"><%="#{photo.user.name}"%></span>
                                             <span class="btn-group-toggle btn_discovery_follow ml-auto py-1" style="width:80px" data-toggle="buttons">
                                                 <% if current_user.followings.ids.include?(photo.user.id)%>                                               
-                                                  <%=button_to "unfollow", unfollow_user_path(follow_id: photo.user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                                  <%=button_to "unfollow", toggleFollow_path(follow_id: photo.user.id, id: current_user.id), class:"btn btn_toggle_follow btn-sm  m-0 p-0 following",  method: :post%>
                                                 <%else%>
-                                                  <%=button_to "follow", follow_user_path(follow_id: photo.user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                                  <%=button_to "follow", toggleFollow_path(follow_id: photo.user.id, id: current_user.id),class:"btn  btn_toggle_follow btn-sm  m-0 p-0 follow", method: :post%>              
                                                 <% end %>
+                          
                                             </span>
                                         </div>
                                     </div>
                                   <h6 class="card-title font-weight-bold title"><%=photo.title %></h6>
                                   <p class="card-text description"><%=photo.description%></p>
                                   <div class="d-flex justify-content-between ">
-                                      <span>
-                                        <span class = "heart"><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>
-                                        <small class = "like_number"><%=photo.like%></small>
-                                      </span>
-                                    
+                                      <div>
+                                      <% if photo.likes.pluck(:user_id).include?(current_user.id)%>                                               
+                                         <%=link_to toggleLikeP_path(id: photo.id), method: :post do%>
+                                          <span class = "heart"><i class="fa fa-heart " aria-hidden="true" ></i> </span>                                        
+                                          <%end%>
+                                      <%else%>
+                                        <%=link_to toggleLikeP_path(id: photo.id), method: :post do%>
+                                          <span class = "heart"><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>                                        
+                                          <%end%>
+                                      <% end %>
+                                      <span class = "like_number"><%=photo.likes.count%></span>
+                                      </div>
                                     <span class="card-text"><small class="text-muted"><%=photo.created_at %></small></span>
                                   </div>
                                 </div>

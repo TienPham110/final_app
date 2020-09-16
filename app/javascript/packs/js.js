@@ -1,28 +1,24 @@
 
-// $(document).ready(function(){
-//   $(".heart").click(function(){
-//     if($(this).hasClass("liked")){
-//       $(this).html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
-//       $(this).removeClass("liked");
-//       num = $(".like_number",$(this).parent()).text()
-//       like_num = parseInt(num) 
-//       like_num -= 1
-//       console.log($(this).attr("class"))
-//       $(".like_number",$(this).parent()).text(like_num)
-//     }else{
-//       $(this).html('<i class="fa fa-heart" aria-hidden="true"></i>');
-//       $(this).addClass("liked");
-//       num = $(".like_number",$(this).parent()).text()
-//       like_num = parseInt(num) 
-//       like_num += 1
-//       console.log(like_num)
-//       $(".like_number",$(this).parent()).text(like_num) 
-//     }
-//   });
-
-
-  
-// });
+$(document).ready(function(){
+  $(".heart").click(function(){
+    if($("i",this).hasClass("fa-heart")){
+      $("i",this).removeClass("fa-heart")
+      $("i",this).addClass("fa-heart-o")
+      num = $(".like_number",$(this).closest("div")).text()
+      console.log(num)
+      like_num = parseInt(num) 
+      like_num -= 1
+      $(".like_number",$(this).closest("div")).text(like_num)
+    }else{
+      $("i",this).removeClass("fa-heart-o")
+      $("i",this).addClass("fa-heart")
+      num = $(".like_number",$(this).closest("div")).text()
+      like_num = parseInt(num) 
+      like_num += 1
+      $(".like_number",$(this).closest("div")).text(like_num) 
+    }
+  });  
+});
 $(document).ready(function() {
   var index
   $('.photo_item .photo_feed_avatar').click(function(){
@@ -35,7 +31,6 @@ $(document).ready(function() {
       description = $(".description").map(function(){
         return $(this).text()
       })
-      console.log(title)
       $("#photoModal").attr("src",src)
       $("#myModalLabel").text(title[index])
       $("#myModalDescription").text(description[index])
@@ -43,33 +38,23 @@ $(document).ready(function() {
 
 })
 
-// $(document).ready(function(){
-//   $(".btn_discovery_follow label").click(function(){
-//     if($(this).hasClass("following")){
-//       $(this).removeClass("following")
-//       $(this).text("follow")
-//       console.log(this)
-//     }
-//     else{
-//       $(this).addClass("following")
-//       $(this).text("following")
-//       console.log(this)
-//     }
-//   })
-// })
-// $(document).ready(function(){
-//   $(".btn_unfollow label").click(function(){
-//     if($("input",this).is(":checked")){
-//       $(this).html('<input type="checkbox" autocomplete="off"> follow')
-//       $(this).addClass("unfollowed")
-//       console.log(this)
-//     }
-//     else{
-//       $(this).html('<input type="checkbox" autocomplete="off" checked> unfollow')
-//       $(this).removeClass("unfollowed")
-//     }
-//   })
-// })
+$(document).ready(function(){
+  $(".btn_toggle_follow").click(function(){
+    if($(this).hasClass("following")){
+      $(this).removeClass("following")
+      $(this).addClass("follow")
+      $(this).attr("value", "follow") 
+      console.log(this)
+    }
+    else{
+      $(this).removeClass("follow")
+      $(this).addClass("following")
+      $(this).attr("value", "unfollow") 
+      console.log(this)
+    }
+  })
+})
+
 
 
   $(document).ready(function() {

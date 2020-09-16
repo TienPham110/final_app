@@ -17,6 +17,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'sidekiq'
 gem "i18n-js"
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'
 

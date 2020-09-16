@@ -1,7 +1,7 @@
 <div class="col-lg-6 photo_item d-flex justify-content-center">
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters photo_feed">
-                                <div class="col-md-6 photo_feed_avatar gallery-item_feed photo-stack" data-toggle="modal" data-target="#myModal">
+                                <div class="col-md-6 photo_feed_avatar gallery-item_feed photo-stack" data-toggle="modal" data-target="#myModal<%=album.id%>">
                                         <%album.photos.each do |photos|%>
                                         <%= image_tag(photos.image.url) %>
                                         <%end%>
@@ -23,9 +23,9 @@
                                             <span class="btn-group-toggle btn_discovery_follow ml-auto py-1" style="width:80px" data-toggle="buttons">
                                                 <span class="btn-group-toggle btn_discovery_follow ml-auto py-1" style="width:80px" data-toggle="buttons">
                                                   <% if current_user.followings.ids.include?(album.user.id)%>                                               
-                                                    <%=button_to "unfollow", unfollow_user_path(follow_id: album.user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                                    <%=button_to "unfollow", toggleFollow_path(follow_id: album.user.id, id: current_user.id), class:"btn btn-sm btn_toggle_follow  m-0 p-0 following",  method: :post%>
                                                   <%else%>
-                                                    <%=button_to "follow", follow_user_path(follow_id: album.user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                                    <%=button_to "follow", toggleFollow_path(follow_id: album.user.id, id: current_user.id),class:"btn  btn-sm btn_toggle_follow  m-0 p-0 follow", method: :post%>              
                                                   <% end %>
                                             </span>
                                             </span>
@@ -34,10 +34,18 @@
                                   <h6 class="card-title font-weight-bold title"><%= album.title%></h6>
                                   <p class="card-text description"><%=album.description%></p>
                                   <div class="d-flex justify-content-between">
-                                      <span>
-                                        <span class = "heart"><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>
-                                        <small class = "like_number"><%=album.like%></small>
-                                      </span>
+                                      <div>
+                                      <% if album.likes.pluck(:user_id).include?(current_user.id)%>                                               
+                                         <%=link_to toggleLikeA_path(id: album.id), method: :post do%>
+                                          <span class = "heart"><i class="fa fa-heart " aria-hidden="true" ></i> </span>                                        
+                                          <%end%>
+                                      <%else%>
+                                        <%=link_to toggleLikeA_path(id: album.id), method: :post do%>
+                                          <span class = "heart"><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>                                        
+                                          <%end%>
+                                      <% end %>
+                                      <span class = "like_number"><%=album.likes.count%></span>
+                                      </div>
                                     
                                     <span class="card-text"><small class="text-muted"> <%=album.created_at %></small></span> 
                                   </div>

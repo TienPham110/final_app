@@ -1,0 +1,20 @@
+
+    <div class="col-xl-2 col-md-6 p-0 m-4 manage-item photo-stack">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <%album.photos.each do |photo|%>
+                                            <%=image_tag(photo.image.url)%>
+                                        <%end%>                       
+                                        <div class="top-left d-flex justify-content-between edit_manage_album">
+                                            <span><%=album.title%></span>
+                                            <%= link_to edit_admin_album_path(album_id: album.id) do%>
+                                                <i class="fa fa-edit" style="font-size:1.5rem"></i>
+                                            <%end%>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 

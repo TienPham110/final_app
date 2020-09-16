@@ -7,17 +7,28 @@ Rails.application.routes.draw do
   get 'discovery/album', to: 'home#disAlbum'
   get 'feed/album', to: 'home#feedAlbum', as: "feedAlbum"
   get 'feed/photo', to: 'home#feedPhoto', as: "feedPhoto"
-  post '/user/:id/follow', to: 'user#follow', as: "follow_user"
-  post '/user/:id/unfollow', to: 'user#unfollow', as: "unfollow_user"
-  post ':id/like', to: 'photos#like', as: "like"
-  post ':id/unlike', to: 'photos#unlike', as: 'unlike'
-  resources :user, except: [:create, :new] do
+  post '/user/:id/toggleFollow', to: 'user#toggleFollow', as: "toggleFollow"
+  post ':id/toggleLikePhoto', to: 'likes#toggleLikeP', as: 'toggleLikeP'
+  post ':id/toggleLikeAlbum', to: 'likes#toggleLikeA', as: 'toggleLikeA'
+  delete '/imageAdmin', to: 'image#destroyAdmin', as: 'destroyAdmin'
+
+  resources :user, only: [:index] do
     resources :photos
     resources :albums
     member do
       get :followings, :followers
     end
   end  
-  resources :admin, only: [:show]
+
+  namespace :admin do
+    resources :photos, only: [:show, :edit, :destroy, :update]
+    resources :albums, only: [:show, :edit, :destroy, :update]
+    resources :user, only: [:show, :edit, :destroy, :update]
+  end
+  
+  namespace :guest do 
+    get :photos, :albums
+  end
+
   resources :image, only: [:destroy] 
 end

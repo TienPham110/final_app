@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%=stylesheet_link_tag 'style'%>
+    <%=javascript_pack_tag 'show'%>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <%=render 'shared/headerAdmin'%>
+        <div class="container-fluid my-3">
+            <p class="alert<%if !flash[:error].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:error] %></p>
+            <p class="alert<%if !flash[:success].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:success] %></p>           
+        </div>
+        <div class="row">
+            <div class="col my-1 p-0  text-center text-xl-left">
+                <div class="btn-group-toggle left_col mx-5" role="tablist">
+                    <label class="btn font-weight-bold active manage" >
+                         <%=link_to 'Manage Photos', admin_photo_path, class:"text-decoration-none"%>
+                    </label> <br>
+                    <label class="btn font-weight-bold manage left">    
+                        Manage Albums
+                    </label>
+                    <label class="btn font-weight-bold manage">
+                         <%=link_to 'Manage Users', admin_user_path, class:"text-decoration-none"%>
+                    </label>
+                </div>          
+            </div>
+            <div class="col-xl-8 photo_feed_container ">
+                <div class="row  px-2">
+                    <%@albums.each do |album|%>
+                        <%=render partial: 'admin/albums/album', locals: {album: album}%>
+                    <%end%>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center my-5">
+                        <%=paginate @albums%>
+                    </div>
+                </div>
+                <div class="row w-100" style="height:100px" ></div>
+            </div>
+            <div class="col p-0 m-0"></div>
+            
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+     
+      
+</body> 
+
+</html>

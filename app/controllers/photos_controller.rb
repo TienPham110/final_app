@@ -1,11 +1,15 @@
 class PhotosController < ApplicationController
-    before_action :photo_params, only: [:create]
-    before_action :show_user_photo, only: [:index]
-    # before_action :userId_params, only: [:index,:create]
-    # before_action :photoId_params, only: [:edit, :update, :destroy, :like, :unlike]
-
+    before_action :photo_params, only: [:create, :update]
+    
+    PER_PAGE = 20
     def index
         @user = User.find(params[:user_id])
+        if current_user.id == (params[:user_id]).to_i
+            @photos = @user.photos.where(album_id:nil).order(created_at: :asc).page(params[:page]).per(PER_PAGE)
+        else
+            @photos = @user.photos.where(album_id:nil, shared: true).order(created_at: :asc).page(params[:page]).per(PER_PAGE)
+            
+        end
     end
 
     def new
@@ -19,7 +23,7 @@ class PhotosController < ApplicationController
             flash.keep[:success] = "Create success"
             redirect_to user_photos_path
         else
-            flash.keep[:error] = "You must fill in the title and upload image less than 2Mb"
+            flash.keep[:error] = "You must fill in the title and upload image less than 5Mb"
             redirect_to new_user_photo_path
         end
 
@@ -55,20 +59,4 @@ class PhotosController < ApplicationController
             params.require(:photo).permit(:title, :description, :image, :shared)
         end
 
-        def show_user_photo
-            @photos = current_user.photos.where(album_id:nil).order(created_at: :asc).page(params[:page]).per(8)
-        end
-        
-        # def userId_params
-        #     params.require(:user_id)
-        # end
-
-        # def photoId_params
-        #     params.require(:id)
-        # end
-
-        
-        
-        
-        
 end

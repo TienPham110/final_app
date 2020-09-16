@@ -1,31 +1,25 @@
 class HomeController < ApplicationController
-    before_action :show_photo, only: [:feedPhoto , :disPhoto]
-    before_action :show_album, only: [:feedAlbum , :disAlbum]
-    
+
+    PER_PAGE = 6
+
     def feedAlbum
+        @albums = Album.where(shared:true, user_id: current_user.followings.ids).order(updated_at: :desc).page(params[:page]).per(PER_PAGE)
         render template: "feed/albums"
     end
 
     def feedPhoto
+        @photos = Photo.where(shared:true, album_id:nil,user_id: current_user.followings.ids).order(updated_at: :desc).page(params[:page]).per(PER_PAGE)
         render template: "feed/photos"   
     end
 
     def disPhoto
+        @photos = Photo.where(shared: true, album_id: nil).where.not(user_id: current_user.id).order(updated_at: :desc).page(params[:page]).per(PER_PAGE)
         render template: "discovery/photos"
     end
     
-    def disAlbum
+    def disAlbum    
+        @albums = Album.where(shared:true).where.not(user_id: current_user.id).order(updated_at: :desc).page(params[:page]).per(PER_PAGE)
         render template: "discovery/albums"
-    end
-
-    private
-        def show_photo  
-            @photos = Photo.where(shared:true,album_id:nil).order(created_at: :desc).page(params[:page]).per(6)  
-        end
-
-        def show_album
-            @albums = Album.where(shared:true).order(created_at: :desc).page(params[:page]).per(6)
-        end
-    
+    end 
     
 end

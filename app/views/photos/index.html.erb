@@ -45,19 +45,24 @@
                                 <div class="row ">
                                 <div class="col-lg-3">
                                    <% if current_user.followings.ids.include?(@user.id)%>                                               
-                                        <%=button_to "unfollow", unfollow_user_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                        <%=button_to "unfollow", toggleFollow_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
                                     <%else%>
-                                        <%=button_to "follow", follow_user_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                        <%=button_to "follow", toggleFollow_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
                                     <% end %>
                                 </div>
                                 </div>
                             <%end%>
-                            <div class="profile-user-name font-weight-bold"><%="#{@user.firstName} #{@user.lastName}"%></div>
+                            <div class="profile-user-name font-weight-bold"><%="#{@user.name}"%></div>
                 
                             <div class="profile-stats">
                                 <ul class="p-0 left_col">
+                                <%if current_user.id == @user.id%>
                                     <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.photos.where(album_id:nil).count%></span> PHOTOS</li>
                                     <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.count%></span> ALBUMS <%end%> </li>
+                                <%else%>
+                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.photos.where(album_id:nil, shared:true).count%></span> PHOTOS</li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.where(shared: true).count%></span> ALBUMS <%end%> </li>
+                                <%end%>
                                     <li class="px-1 border-right font-weight-bold " ><%= link_to followings_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followings.count%></span> FOLLOWINGS <%end%> </li>
                                     <li class="px-1  font-weight-bold " ><%= link_to followers_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followers.count%></span> FOLLOWERS <%end%> </li>
                                 </ul>
@@ -80,28 +85,27 @@
                 <div class="d-flex justify-content-center">
                     <%= paginate @photos%>
                 </div>
-                
+                <div class="row w-100 " style="height:300px"></div>
             </div>
 
             <div class="col-xl-2 col-sm-12 p-0 m-0">
             </div>
-                
+            
         </div>
-        <div class="row w-100 my-2"></div>
+        <div class="row w-100 my-3"></div>
     </div>
      <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title text-break" id="myModalLabel">aaaaaaaaaaaaaaaaaa</h4>
+            <h4 class="modal-title text-break" id="myModalLabel"></h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           <img src="" alt="PHOTO" id="photoModal">
         </div>
         <div class="modal-footer text-break" id="myModalDescription">
-            this is description
         </div>
       </div>
     </div>

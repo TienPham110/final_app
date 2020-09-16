@@ -1,0 +1,50 @@
+
+<%= form_for @photo, url: admin_photo_path(photo_id: @photo.id, user_id: @photo.user.id), html: {class: "row justify-content-center pt-3 mx-md-4"}, local: true  do |form|%>
+                    <div class="col ml-">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <%=form.label :title%>
+                                    <%=form.text_field :title, class:"form-control" ,id:"title_add_photo" , style:"border: 2px solid rgb(209, 207, 207)" ,placeholder:"Photo Title"%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col col-xl-6 col-md-6">
+                                <div class="form-group">
+                                    
+                                    <%=form.label :"Sharing Mode"%>
+                                    <%=form.select :shared, options_for_select([['Public', true], ['Private', false]], @photo.shared) %>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pl-3 mb-5">
+                            <label for="photo_image"  class="col-md-5  px-0 image-hover">
+                                <%= image_tag @photo.image.url , id:"image_label"%>
+                            </label>
+                        <%=form.file_field :image, style:"display:none"%>
+                        </div>
+                        
+                        <div class="row pl-3">
+                            <div class="col-lg-5 col-md-5 d-flex justify-content-between p-0" >
+                                <%= form.submit 'Save', class:"btn btn-success m-0"%>     
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mr-4">
+                        <div class="form-group">
+                            <%=form.label :description%>
+                            <%=form.text_area :description, class:"form-control rounded-1", rows:"3" ,placeholder:"Photo Description", style:"border: 2px solid rgb(209, 207, 207)",size:"1x5"%>
+                          </div>
+                    </div>
+
+<%end%>
+<div class="row justify-content-center">
+<div class="col-9 super" >
+<%= button_to(admin_photo_path(photo_id: @photo.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ml-4") do %>
+                                <i class='fa fa-trash'></i>    Delete 
+<%end%>
+</div>
+
+</div>

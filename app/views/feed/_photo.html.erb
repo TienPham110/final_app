@@ -13,18 +13,18 @@
                                   <h6 class="card-title font-weight-bold title"><%=photo.title %></h6>
                                   <p class="card-text description"><%=photo.description %></p>
                                   <div class="d-flex justify-content-between mt-5">
-                                      
-                                      <% if photo.likes.pluck.include?(current_user.id)%>                                               
-                                         <%=link_to unlike_path(id: photo.id), method: :post do%>
-                                          <span class = "heart"><i class="fa fa-heart" aria-hidden="true" ></i> </span>                                        
-                                          <span class = "like_number"><%=photo.like%></span>
+                                      <div>
+                                      <% if photo.likes.pluck(:user_id).include?(current_user.id)%>                                               
+                                         <%=link_to toggleLikeP_path(id: photo.id), method: :post do%>
+                                          <span class = "heart"><i class="fa fa-heart " aria-hidden="true" ></i> </span>                                        
                                           <%end%>
                                       <%else%>
-                                        <%=link_to like_path(id: photo.id), method: :post do%>
+                                        <%=link_to toggleLikeP_path(id: photo.id), method: :post do%>
                                           <span class = "heart"><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>                                        
-                                          <span class = "like_number"><%=photo.like%></span>
                                           <%end%>
                                       <% end %>
+                                      <span class = "like_number"><%=photo.likes.count%></span>
+                                      </div>
                                       
                                     <span class="card-text"><small class="text-muted"><%=photo.created_at%></small></span>
                                   </div>

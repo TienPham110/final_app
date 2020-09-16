@@ -1,0 +1,22 @@
+<div class="row">
+            <div class="col">
+                <nav class="navbar navbar-dark navbar-expand-lg justify-content-between py-lg-0" style="background-color: #3c5a9a">
+                    <nav class="navbar w-75 justify-content-start mx-lg-5" >
+                        <%= link_to 'Fotobook', guest_photos_path, class: "navbar-brand font-weight-bold mx-lg-4 " %>
+                    <form class="form-inline w-50" >
+                        <input class="form-control w-100" type="search" placeholder="Search Photo / Album" aria-label="Search">
+                    </form>
+                    </nav>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item py-xl-2 py-sm-1">
+                                <%= button_to "Log in", root_path, {class:"btn btn-default active font-weight-bold mx-xl-5 mx-md-2 btn_log", method: :get} %>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>

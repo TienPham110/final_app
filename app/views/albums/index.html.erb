@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-    
     <%= stylesheet_link_tag 'style' %>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <style>
-        
-    </style>
+    <%= javascript_pack_tag 'js' %>
 </head>
 <body>
     <div class="container-fluid" style="background-color: #fdf5f5">
@@ -47,19 +41,24 @@
                                 <div class="row ">
                                 <div class="col-lg-3">
                                    <% if current_user.followings.ids.include?(@user.id)%>                                               
-                                        <%=button_to "unfollow", unfollow_user_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                        <%=button_to "unfollow", toggleFollow_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
                                     <%else%>
-                                        <%=button_to "follow", follow_user_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                        <%=button_to "follow", toggleFollow_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
                                     <% end %>
                                 </div>
                                 </div>
                             <%end%>
-                            <div class="profile-user-name font-weight-bold"><%="#{@user.firstName} #{@user.lastName}"%></div>
+                            <div class="profile-user-name font-weight-bold"><%="#{@user.name}"%></div>
                 
                             <div class="profile-stats">
                                 <ul class="p-0 left_col">
+                                <%if current_user.id == @user.id %>
                                     <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.photos.where(album_id:nil).count%></span> PHOTOS <%end%> </li>
                                     <li class="px-1 border-right font-weight-bold left"><span class="profile-stat-count left"><%=@user.albums.count%></span> ALBUMS</li>
+                                <%else%>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.photos.where(album_id: nil,shared: true).count%></span> PHOTOS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold left"><span class="profile-stat-count left"><%=@user.albums.where(shared:true).count%></span> ALBUMS</li>
+                                <%end%>
                                     <li class="px-1 border-right font-weight-bold " ><%= link_to followings_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followings.count%></span> FOLLOWINGS <%end%> </li>
                                     <li class="px-1 font-weight-bold " ><%= link_to followers_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followers.count%></span> FOLLOWERS <%end%> </li>
                                 </ul>
@@ -72,11 +71,15 @@
                 </div>
                 <%end%>
                 <div class="row  flex px-2">   
-                    <%@user.albums.each do |album|%>
+                    <%@albums.each do |album|%>
                     <%= render partial: 'albums/album', locals: {album: album} %>
                     <%end%>
                    
                 </div>
+                <div class="d-flex justify-content-center">
+                    <%= paginate @albums%>
+                </div>
+                <div class="row w-100 " style="height:300px"></div>
             </div>
 
             <div class="col-xl-2 col-sm-12 p-0 m-0">
@@ -90,18 +93,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title text-break" id="myModalLabel">aaaaaaaaaaaaaaaaaa</h4>
+            <h4 class="modal-title text-break" id="myModalLabel"></h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           <img src="" alt="PHOTO" id="photoModal">
         </div>
-        <div class="modal-footer text-break" id="myModalDescription">
-            this is description
+        <div class="modal-footer text-break" id="myModalDescription">   
         </div>
       </div>
     </div>
   </div>
 </body>
-<%= javascript_pack_tag 'js' %>
 </html>

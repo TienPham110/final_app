@@ -13,14 +13,14 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item pl-2 py-2">
-                                <%if current_user.admin%>
-                                <%= link_to(image_tag(current_user.avatar.url, class: "rounded-circle" , style: "height: 40px; width:40px"),admin_path(current_user.id)) %>
-                                <%else%>
                                 <%= link_to(image_tag(current_user.avatar.url, class: "rounded-circle" , style: "height: 40px; width:40px"),user_photos_path(current_user.id)) %>
-                                <%end%>
                             </li>
                             <li class="nav-item py-xl-2 py-sm-1">
-                                <input class="btn btn-default active font-weight-bold h-100 btn_log" type="button" value="<%=current_user.firstName%>">
+                                <%if current_user.admin%>
+                                <%= link_to("#{current_user.firstName}", admin_photo_path(current_user.id), class:"btn btn-default active font-weight-bold h-100 btn_log" ) %>
+                                <%else%>
+                                <%= link_to("#{current_user.firstName}", user_photos_path(current_user.id), class:"btn btn-default active font-weight-bold h-100 btn_log" ) %>
+                                <%end%>
                             </li>
                             <li class="nav-item py-xl-2 py-sm-1">
                                  <%= button_to 'Logout', destroy_user_session_path(id: current_user.id), {class: "btn btn-default active font-weight-bold mx-lg-5 h-100 btn_log", method: "delete"}%>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%=javascript_pack_tag 'js'%>
+    <%=stylesheet_link_tag 'style'%>
+    
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <%=render 'shared/header'%>
+         <div class="container-fluid my-3">
+            <p class="alert<%if !flash[:error].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:error] %></p>
+            <p class="alert<%if !flash[:success].blank?%><%=p " alert-secondary"%> <%else%><%=p " d-none"%><%end%>"><%= flash[:success] %></p>
+        </div>
+        <div class="row w-100 my-2" ></div>
+        <div class="row">
+            <div class="col my-1 p-0  text-center text-xl-left ">
+                <div class="btn-group-toggle left_col mx-5" role="tablist">
+                    <label class="btn font-weight-bold active manage left" >
+                        <%=link_to 'Manage Photos', admin_photo_path(current_user.id), class:"text-decoration-none"%>
+                    </label> <br>
+                    <label class="btn font-weight-bold manage">    
+                       Manage Albums
+                    </label>
+                    <label class="btn font-weight-bold manage">
+                        <%=link_to 'Manage Users', admin_user_path(current_user.id), class:"text-decoration-none"%>
+                    </label>
+                </div>        
+            </div>
+            <div class="col-xl-8 py-3 photo_feed_container">
+                <div class="row justify-content-center">
+                    <div class="col-11 font-weight-bold border-bottom py-3 px-0 d-flex justify-content-between">
+                        <span>Edit Photo</span>
+                       
+                        <%=button_to 'Back', admin_album_path, {class:"btn btn-primary btn-sm" ,style:"background-color: #3c5a9a", method:'get'}%>
+                    </div>
+ 
+                </div>
+                <%= render partial: 'editAlbum'%>
+                <div class="row" style="height: 300px;"></div>
+            </div>
+            <div class="col p-0 m-0"></div>
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+     
+      
+</body> 
+
+</html>

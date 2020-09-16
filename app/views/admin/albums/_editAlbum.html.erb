@@ -1,0 +1,50 @@
+
+<%= form_for [@album,@photo], url: admin_album_path(album_id: @album.id, user_id: @album.user_id), html: {class: "row justify-content-center pt-3 mx-md-4", method: :put}, local: true  do |form|%>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <%=form.label :title%>
+                                    <%=form.text_field :title, class:"form-control" ,id:"title_add_photo" , style:"border: 2px solid rgb(209, 207, 207)",placeholder:"title album",value:"#{@album.title}"%>
+                                </div>
+                                <div class="form-group w-50">                    
+                                    <%=form.label :"Sharing Mode"%>
+                                    <%=form.select :shared, options_for_select([['Public', true], ['Private', false]], @album.shared) %>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <%=form.label :description%>
+                                    <%=form.text_area :description, class:"form-control rounded-1", rows:"3" ,placeholder:"description album",value:"#{@album.description}", style:"border: 2px solid rgb(209, 207, 207)",size:"1x5"%>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row pl-3 my-5 ">
+                            <%@album.photos.each do |photo|%>
+                            <div class="col-sm-6 col-lg-3 mr-2 mb-2 container_del_button_album " id="edit_album_image">
+                            <%=image_tag(photo.image.url)%>
+                            <%=link_to 'X', destroyAdmin_path(photo_id: photo.id, album_id: photo.album_id, id: photo.user.id), class:"btn btn-sm font-weight-bold rounded-circle", method: :delete, data: { confirm: 'Are you sure?'}%> 
+                            </div> 
+                            <%end%>
+                            <%if @album.photos.count < 25%>
+                            <label for="photo_image"  class="col-sm-6 col-lg-3 px-0 image-hover">
+                                <%= image_tag 'plus.png' , id:"image_label"%>
+                            </label>
+                            <%=form.file_field :image, style:"display:none"%>
+                            <%end%>   
+                        </div>
+                        <div class="row pl-3">
+                            <div class="col-lg-5 col-md-5  p-0" >
+                                <%= form.submit 'Save', class:"btn btn-success m-0"%> 
+                            </div>
+                        </div>          
+                    </div>
+<%end%>
+<div class="row justify-content-center">
+<div class="col-9 super" >
+<%= button_to(admin_album_path(album_id: @album.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ml-4") do %>
+                                <i class='fa fa-trash'></i>    Delete 
+<%end%>
+</div>
+
+</div>
