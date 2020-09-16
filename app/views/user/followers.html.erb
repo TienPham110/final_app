@@ -41,9 +41,9 @@
                                 <div class="row ">
                                 <div class="col-lg-3">
                                    <% if current_user.followings.ids.include?(@user.id)%>                                               
-                                        <%=button_to t(:unfollow), unfollow_user_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                        <%=button_to  'unfollow', toggleFollow_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
                                     <%else%>
-                                        <%=button_to "follow", follow_user_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                        <%=button_to "follow", toggleFollow_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
                                     <% end %>
                                 </div>
                                 </div>

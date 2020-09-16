@@ -1,4 +1,4 @@
-
+// Like and unlike
 $(document).ready(function(){
   $(".heart").click(function(){
     if($("i",this).hasClass("fa-heart")){
@@ -19,6 +19,8 @@ $(document).ready(function(){
     }
   });  
 });
+
+// Get title and description
 $(document).ready(function() {
   var index
   $('.photo_item .photo_feed_avatar').click(function(){
@@ -38,6 +40,7 @@ $(document).ready(function() {
 
 })
 
+// follow and unfollow
 $(document).ready(function(){
   $(".btn_toggle_follow").click(function(){
     if($(this).hasClass("following")){
@@ -55,7 +58,7 @@ $(document).ready(function(){
   })
 })
 
-
+// up load images (preview)
 
   $(document).ready(function() {
     handle_preview($("#photo_image"), $("#image_label"));
