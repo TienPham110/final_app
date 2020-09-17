@@ -22,7 +22,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-6 text-center font-weight-bold">
                                         <span class="btn-group-toggle ml-auto py-1">
-                                            <%=button_to "unfollow", toggleFollow_path(follow_id: following.id), class:"btn btn-sm btn_toggle_follow  m-0 p-0 following",  method: :post, :data => {:confirm => 'Are you sure?'}%>     
+                                            <%=button_to t(".unfollow"), toggleFollow_path(follow_id: following.id), class:"btn btn-sm btn_toggle_follow  m-0 p-0 following",  method: :post, :data => {:confirm => 'Are you sure?'}%>     
                                         </span>
                                     </div>
                                 </div>

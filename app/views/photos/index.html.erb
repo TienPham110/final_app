@@ -21,8 +21,8 @@
         <div class="row">
             <div class="col-xl-2 col-sm-12  my-1 p-0  text-center text-xl-left">
                 <div class="btn-group-toggle left_col mx-5">
-                  <%=button_to 'Feeds', feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
-                  <%=button_to 'Discovery', discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
+                  <%=button_to t('.feeds'), feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
+                  <%=button_to t('.discovery'), discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
                 </div>          
             </div>
 
@@ -38,16 +38,16 @@
                             <%if current_user.id == @user.id%>
                             <div class="row ">
                                 <div class="col">
-                                    <%= button_to 'Edit Profile', edit_user_registration_path, {class:"btn btn-sm btn-primary btn_edit_profile", method:'get'}%>
+                                    <%= button_to t('.editProfile'), edit_user_registration_path, {class:"btn btn-sm btn-primary btn_edit_profile", method:'get'}%>
                                 </div>
                             </div>
                             <%else%>
                                 <div class="row ">
                                 <div class="col-lg-3">
                                    <% if current_user.followings.ids.include?(@user.id)%>                                               
-                                        <%=button_to "unfollow", toggleFollow_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                        <%=button_to t(".unfollow"), toggleFollow_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm btn_toggle_follow m-0 p-0 following",  method: :post%>
                                     <%else%>
-                                        <%=button_to "follow", toggleFollow_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                        <%=button_to t(".follow"), toggleFollow_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm btn_toggle_follow m-0 p-0 follow", method: :post%>              
                                     <% end %>
                                 </div>
                                 </div>
@@ -57,21 +57,21 @@
                             <div class="profile-stats">
                                 <ul class="p-0 left_col">
                                 <%if current_user.id == @user.id%>
-                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.photos.where(album_id:nil).count%></span> PHOTOS</li>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.count%></span> ALBUMS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.photos.where(album_id:nil).count%></span> <%=t('.photos')%></li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.count%></span> <%=t('.albums')%> <%end%> </li>
                                 <%else%>
-                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.photos.where(album_id:nil, shared:true).count%></span> PHOTOS</li>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.where(shared: true).count%></span> ALBUMS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.photos.where(album_id:nil, shared:true).count%></span> <%=t('.photos')%></li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.where(shared: true).count%></span> <%=t('.albums')%> <%end%> </li>
                                 <%end%>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to followings_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followings.count%></span> FOLLOWINGS <%end%> </li>
-                                    <li class="px-1  font-weight-bold " ><%= link_to followers_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followers.count%></span> FOLLOWERS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to followings_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followings.count%></span> <%=t('.followings')%> <%end%> </li>
+                                    <li class="px-1  font-weight-bold " ><%= link_to followers_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followers.count%></span> <%=t('.followers')%> <%end%> </li>
                                 </ul>
                             </div>
                         </div>
                 </div>
                 <%if current_user.id == @user.id%>
                 <div class="row justify-content-end px-xl-4 my-3">
-                    <div class="col-xl-2 col"><%=button_to 'Add Photo', new_user_photo_path, class:"btn btn-sm btn-success btn_add_photo p-0", method: "get"%></div>    
+                    <div class="col-xl-2 col"><%=button_to t('.addPhoto'), new_user_photo_path, class:"btn btn-sm btn-success btn_add_photo p-0", method: "get"%></div>    
                 </div>
                 <%end%>
                 <div class="row flex px-2">

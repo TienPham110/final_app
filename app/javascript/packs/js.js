@@ -36,8 +36,27 @@ $(document).ready(function() {
       $("#photoModal").attr("src",src)
       $("#myModalLabel").text(title[index])
       $("#myModalDescription").text(description[index])
+      console.log(src)
     })
-
+    $('#pills-tab button:first-child').click(function(){
+      if($("#pills-album").hasClass("show")){
+        $("#pills-album").removeClass("active")
+        $("#pills-photo").addClass("active")
+        $("#pills-album-tab").removeClass("border-feed-photo")
+        $("#pills-photo-tab").addClass("border-feed-photo")
+      }
+      else{
+        $(this).removeClass("border-feed-photo")
+      }
+    }) // Select first tab
+    $('#pills-tab button:last-child').click(function(){
+      if($("#pills-photo").hasClass("show")){
+        $("#pills-photo").removeClass("active")
+        $("#pills-album").addClass("active")
+        $("#pills-photo-tab").removeClass("border-feed-photo")
+        $("#pills-album-tab").addClass("border-feed-photo")
+      }
+    }) // Select last tab
 })
 
 // follow and unfollow

@@ -4,7 +4,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  if Rails.env.development?
+    storage :file
+  else
+    include Cloudinary::CarrierWave
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -21,7 +25,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
   def default_url(*args)
-      "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    ActionController::Base.helpers.asset_path("default.png")
   end
 
   # Process files as they are uploaded:
@@ -50,6 +54,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
   def size_range
-    0..5.megabytes
+    0..2.megabytes
   end
 end

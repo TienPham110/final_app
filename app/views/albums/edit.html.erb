@@ -18,16 +18,16 @@
         <div class="row">
             <div class="col my-1 p-0  text-center text-xl-left ">
                 <div class="btn-group-toggle left_col mx-5">
-                  <%=button_to 'Feeds', feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
-                  <%=button_to 'Discovery', discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
+                  <%=button_to t('.feeds'), feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
+                  <%=button_to t('.discovery'), discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>  
                 </div>        
             </div>
             <div class="col-xl-8 py-3 photo_feed_container">
                 <div class="row justify-content-center">
                     <div class="col-11 font-weight-bold border-bottom py-3 px-0 d-flex justify-content-between">
-                        <span>Edit Album</span>
+                        <span><%=t('.editAlbum')%></span>
                        
-                        <%=button_to 'Back', user_albums_path, {class:"btn btn-primary btn-sm" ,style:"background-color: #3c5a9a", method:'get'}%>
+                        <%=button_to t('.back'), user_albums_path, {class:"btn btn-primary btn-sm" ,style:"background-color: #3c5a9a", method:'get'}%>
                     </div>
  
                 </div>

@@ -15,16 +15,16 @@
         <div class="row">
             <div class="col my-1 p-0  text-center text-xl-left">
                 <div class="btn-group-toggle left_col mx-5">
-                  <%=button_to 'Feeds', feedAlbum_path, {method: "get", class:"btn font-weight-bold"}%>
-                  <button class="btn font-weight-bold active left">Discovery</button>    
+                  <%=button_to t('.feeds'), feedAlbum_path, {method: "get", class:"btn font-weight-bold"}%>
+                  <button class="btn font-weight-bold active left"><%=t('.discovery')%></button>    
                 </div>             
             </div>
             <div class="col-xl-8 photo_feed_container">
                 <div class="row justify-content-center my-4">
                      <div class="btn-group " >
                          <div class="btn-group  btn-feed-toggle ">
-                         <%=button_to 'PHOTO' , discovery_photo_path, {method: "get", class: "btn font-weight-bold border-feed ", style:"border-radius: 0px"}%>
-                         <button class="btn font-weight-bold border-feed border-feed-photo active" style="border-radius:0px;">ALBUM</button>
+                         <%=button_to t('.photo') , discovery_photo_path, {method: "get", class: "btn font-weight-bold border-feed ", style:"border-radius: 0px"}%>
+                         <button class="btn font-weight-bold border-feed border-feed-photo active" style="border-radius:0px;"><%=t('.album')%></button>
                        </div>
                       </div>
                  </div>

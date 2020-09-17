@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<%=javascript_pack_tag 'js'%>
+<body>
+    <div class="container-fluid" style="background-color: #fdf5f5">
+        <%=render 'shared/header'%>
+        <div class="row w-100 my-2" >
+        </div>
+        <%if flash[:error]%>
+        <div class="alert alert-primary"><%=flash[:error]%></div>
+        <%end%>
+        <div class="row">
+            <div class="col my-1 p-0  text-center text-xl-left">
+                <div class="btn-group-toggle left_col mx-5">
+                    <%=button_to t('.feeds'), feedPhoto_path, {method: "get", class:"btn font-weight-bold"}%>
+                    <%=button_to t('.discovery'), discovery_photo_path, {method: "get", class:"btn font-weight-bold"}%>
+                </div>          
+            </div>
+            <div class="col-xl-8 photo_feed_container">
+                <div class="row justify-content-center my-4">
+                     <div class="btn-group  btn-feed-toggle " id="pills-tab" role="tablist">
+                         <button class=" btn font-weight-bold border-feed border-feed-photo active toggle_search" id="pills-photo-tab" data-toggle="pill" href="#pills-photo" role="tab" aria-controls="pills-photo" aria-selected="true" style="border-radius:0px;"><%=t('.photo')%></button>
+                         <button class=" btn font-weight-bold border-feed  toggle_search" id="pills-album-tab" data-toggle="pill" href="#pills-album" role="tab" aria-controls="pills-album" aria-selected="false" style="border-radius:0px;"><%=t('.album')%></button>
+                       </div>
+                 </div>
+                 
+                 <div class="container-fluid">
+                    <p class="notice <%=p " alert alert-primary" unless notice.blank?%>"><%= notice %></p>
+                    <p class="alert<%=p " alert-secondary" unless alert.blank?%>"><%= alert %></p>
+                </div>
+                <div class="row" >
+                    <div class="col tab-content">
+                        <div class="row tab-pane fade show active " id="pills-photo" role="tabpanel" >
+                            <%@photos.each do |photo|%>
+                                <%=render partial: 'discovery/photo', locals: { photo: photo}%>
+                            <%end%>
+                            <div class="d-flex justify-content-center my-5"><%=paginate @photos%></div>
+                        </div>
+                        <div class="row tab-pane fade" id="pills-album" role="tabpanel" >
+                            <%@albums.each do |album|%>
+                                <%=render partial: 'discovery/album', locals: { album: album}%>
+                            <%end%>
+                            <div class="d-flex justify-content-center my-5"><%=paginate @albums%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w-100 " style="height:100px"></div>
+                <div class="d-flex justify-content-center">
+                    
+                </div>
+            </div>
+        
+            <div class="col p-0 m-0"></div>
+        </div>
+        <div class="row w-100 my-2"></div>
+    </div>
+     <!-- Modal -->
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-break" id="myModalLabel">No Title</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <img src="" alt="PHOTO" id="photoModal">
+            </div>
+            <div class="modal-footer text-break" id="myModalDescription">
+                No Description
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+</body>
+<%@albums.each do |album|%>
+      <%= render partial: 'shared/modalAlbum', locals:{album: album}%>
+    <%end%> 
+<%=stylesheet_link_tag "style"%>
+</html>

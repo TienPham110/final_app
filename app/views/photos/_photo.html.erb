@@ -5,7 +5,7 @@
                                     <div class="col p-0 photo_tab photo_feed_avatar container_change_button_photo " data-toggle="modal" data-target="#myModal">
                                         <%=image_tag(photo.image.url, class:"img_my_profile")%>
                                         <%if current_user.id == @user.id%>
-                                        <%=button_to 'EDIT', edit_user_photo_path(id: photo.id),{ class:"btn btn-sm font-weight-bold", method:"get"}%> 
+                                        <%=button_to t('.edit'), edit_user_photo_path(id: photo.id),{ class:"btn btn-sm font-weight-bold", method:"get"}%> 
                                         <%end%>     
                                     </div>
                                     <div class="gallery-item-type rounded-circle <%=p " d-none" if photo.shared%>" >

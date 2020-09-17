@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   default_url_options :host => "localhost"
   devise_for :users
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   post ':id/toggleLikePhoto', to: 'likes#toggleLikeP', as: 'toggleLikeP'
   post ':id/toggleLikeAlbum', to: 'likes#toggleLikeA', as: 'toggleLikeA'
   delete '/imageAdmin', to: 'image#destroyAdmin', as: 'destroyAdmin'
+  get '/search', to: 'search#show', as: 'show'
 
   resources :user, only: [:index] do
     resources :photos
@@ -31,4 +33,9 @@ Rails.application.routes.draw do
   end
 
   resources :image, only: [:destroy] 
+
+  # web-socket
+  mount Sidekiq::Web => '/sidekiq'
+
+  resources :notifications, only: [:index, :update]
 end

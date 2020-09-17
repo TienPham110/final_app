@@ -3,7 +3,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <%=form.label :title%>
+                                    <%=form.label t('.title')%>
                                     <%=form.text_field :title, class:"form-control" ,id:"title_add_photo" , style:"border: 2px solid rgb(209, 207, 207)" ,placeholder:"Album Title"%>
                                 </div>
                             </div>
@@ -12,8 +12,8 @@
                             <div class="col col-xl-6 col-md-6">
                                 <div class="form-group">
                                     
-                                    <%=form.label :"Sharing Mode"%>
-                                    <%=form.select :shared, options_for_select([['Public', true], ['Private', false]],true) %>
+                                    <%=form.label t(".sharing")%>
+                                    <%=form.select :shared, options_for_select([[t('.public'), true], [t('.private'), false]],true) %>
                                     
                                 </div>
                             </div>
@@ -26,14 +26,14 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <%= form.submit 'Save', class:"btn btn-success"%>
+                                <%= form.submit t('.save'), class:"btn btn-success"%>
                             </div>
                         </div>
                         
                     </div>
                     <div class="col mr-4">
                         <div class="form-group">
-                            <%=form.label :description%>
+                            <%=form.label t('.description')%>
                             <%=form.text_area :description, class:"form-control rounded-1", rows:"3" ,placeholder:"Album Description", style:"border: 2px solid rgb(209, 207, 207)",size:"1x5"%>
                           </div>
                     </div>

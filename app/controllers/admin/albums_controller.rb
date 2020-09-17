@@ -27,6 +27,16 @@ module Admin
                 redirect_to edit_admin_album_path(album_id: params[:album_id])
             end
         end
+
+        def destroy
+            if @album = Album.find(params[:album_id]).destroy
+                flash.keep[:success] = "Delete success"
+                redirect_to admin_album_path
+            else
+                flash.keep[:error] = "Delete failed"
+                render :destroy
+            end
+        end
             
         private
         def check_admin

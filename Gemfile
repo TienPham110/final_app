@@ -14,6 +14,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-validation-rails'
 gem 'rails-i18n'
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'sinatra', '~> 2.0', '>= 2.0.8.1'
 gem 'sidekiq'
 gem "i18n-js"
 gem 'kaminari'

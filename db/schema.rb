@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_080006) do
+ActiveRecord::Schema.define(version: 2020_09_16_070202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2020_09_15_080006) do
     t.bigint "likeable_id"
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "item_type"
+    t.bigint "item_id"
+    t.boolean "viewed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_type", "item_id"], name: "index_notifications_on_item_type_and_item_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -93,6 +104,7 @@ ActiveRecord::Schema.define(version: 2020_09_15_080006) do
   end
 
   add_foreign_key "albums", "users"
+  add_foreign_key "notifications", "users"
   add_foreign_key "photos", "albums"
   add_foreign_key "photos", "users"
 end

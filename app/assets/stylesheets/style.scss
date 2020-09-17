@@ -928,8 +928,8 @@ img.img_my_profile{
   /*follow button*/
 
 .following{
-    background-color: yellow;
-    color: white;  
+    background:linear-gradient(238.39deg, #EB6057 27.49%, #F2994A 69.05%);
+    color:white;  
     border-radius: 10px;
     width: 100%;
     font-weight: bold;
@@ -938,9 +938,9 @@ img.img_my_profile{
 
 .follow{
     background-color:white;
-    color: yellow;
+    color: green;
     border-radius: 10px;
-    border: 1px solid yellow;
+    border: 1px solid green;
     width: 100%;
     font-weight: bold;
     text-decoration:none;
@@ -948,4 +948,13 @@ img.img_my_profile{
 .follow a{
     text-decoration:none;
 }
-  
+
+.btn-search{
+    font-weight: bold;
+    color: #ffffff;
+    
+}
+
+.tab-pane{
+    margin: 0;
+}

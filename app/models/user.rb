@@ -41,12 +41,16 @@ class User < ApplicationRecord
     end
 
     def avatar_name
-      [firstName.chars.first, lastName.chars.first].compact.join
+      [firstName.chars.first, lastName.chars.first].compact.join.upcase
     end
     
+    def unviewed_notifications_count # count unviewd notification
+      Notification.for_user(self.id)
+    end
+
     private
         def create_user
             SendMailJob.perform_now(self)
         end
-   
+    
 end

@@ -18,13 +18,13 @@
             <div class="col my-1 p-0  text-center text-xl-left">
                 <div class="btn-group-toggle left_col mx-5" role="tablist">
                     <label class="btn font-weight-bold active manage left" >
-                        Manage Photos
+                        <%=t('.managePhoto')%>
                     </label> <br>
                     <label class="btn font-weight-bold manage">    
-                        <%=link_to 'Manage Albums', admin_album_path, class:"text-decoration-none"%>
+                        <%=link_to t('.manageAlbum'), admin_album_path, class:"text-decoration-none"%>
                     </label>
                     <label class="btn font-weight-bold manage">
-                        <%=link_to 'Manage Users', admin_user_path, class:"text-decoration-none"%>
+                        <%=link_to t('.manageUser'), admin_user_path, class:"text-decoration-none"%>
                     </label>
                 </div>          
             </div>
@@ -48,7 +48,22 @@
         <div class="row w-100 my-2"></div>
     </div>
      
-      
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title text-break" id="myModalLabel">No Title</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <img src="" alt="PHOTO" id="photoModal">
+        </div>
+        <div class="modal-footer text-break" id="myModalDescription">
+            No Description
+        </div>
+      </div>
+    </div>
+  </div>
 </body> 
 
 </html>

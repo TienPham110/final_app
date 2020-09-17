@@ -12,4 +12,10 @@ class Photo < ApplicationRecord
     #############Upload photo##################
     mount_uploader :image, ImageUploader
 
+    ################realtime-notification##
+    include Notificable
+
+    def user_ids
+        User.all.ids # send the notification to that users
+    end
 end

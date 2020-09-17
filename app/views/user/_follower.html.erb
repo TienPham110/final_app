@@ -24,9 +24,9 @@
                                         <span class="btn-group-toggle ml-auto py-1">
                                             
                                                 <% if current_user.followings.include?(follower)%>                                               
-                                                    <%=button_to "unfollow", toggleFollow_path(follow_id: follower.id), class:"btn btn-sm  m-0 p-0 btn_toggle_follow following",  method: :post, :data => {:confirm => 'Are you sure?'}%>
+                                                    <%=button_to t(".unfollow"), toggleFollow_path(follow_id: follower.id), class:"btn btn-sm  m-0 p-0 btn_toggle_follow following",  method: :post, :data => {:confirm => 'Are you sure?'}%>
                                                 <%else%>
-                                                    <%=button_to "follow", toggleFollow_path(follow_id: follower.id),class:"btn  btn-sm  m-0 p-0 btn_toggle_follow follow", method: :post%>
+                                                    <%=button_to t(".follow"), toggleFollow_path(follow_id: follower.id),class:"btn  btn-sm  m-0 p-0 btn_toggle_follow follow", method: :post%>
                                                  <% end %>
                                             
                                         </span>

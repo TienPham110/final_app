@@ -30,4 +30,177 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  albums:
+    index:
+      editProfile: 'Edit Profile'
+      photos: 'PHOTOS'
+      albums: "ALBUMS"
+      followings: "FOLLOWINGS"
+      followers: "FOLLOWERS"
+      addAlbum: "Add Album"
+      feeds: "Feeds"
+      discovery: "Discovery"
+      unfollow: "unfollow"
+      follow: "follow"
+    album:
+      edit: "EDIT"
+
+    new:
+      feeds: "Feeds"
+      discovery: "Discovery"
+      newAlbum: "New Album"
+    newAlbum:
+      title: "Title"
+      description: "Description"
+      sharing: "Sharing mode"
+      public: "Public"
+      private: "Private"
+      save: "Save"
+    
+    edit:
+      feeds: "Feeds"
+      discovery: "Discovery"
+      editAlbum: "Edit Album"
+      back: "Back"
+    editAlbum: 
+      title: "Title"
+      description: "Description"
+      sharing: "Sharing mode"
+      public: "Public"
+      private: "Private"
+      save: "Save"
+      delete: Delete
+
+  photos:
+    index:
+      editProfile: 'Edit Profile'
+      photos: 'PHOTOS'
+      albums: "ALBUMS"
+      followings: "FOLLOWINGS"
+      followers: "FOLLOWERS"
+      addPhoto: "Add Photo"
+      feeds: "Feeds"
+      discovery: "Discovery"
+      unfollow: "unfollow"
+      follow: "follow"
+    photo:
+      edit: "EDIT"
+
+    new:
+      feeds: "Feeds"
+      discovery: "Discovery"
+      newPhoto: "New Photo"
+    newPhoto:
+      title: "Title"
+      description: "Description"
+      sharing: "Sharing mode"
+      public: "Public"
+      private: "Private"
+      save: "Save"
+    
+    edit:
+      feeds: "Feeds"
+      discovery: "Discovery"
+      editPhoto: "Edit Photo"
+      back: "Back"
+    editPhoto:
+      title: "Title"
+      description: "Description"
+      sharing: "Sharing mode"
+      public: "Public"
+      private: "Private"
+      save: "Save"
+      delete: Delete
+
+  user:
+    followers:
+      editProfile: 'Edit Profile'
+      photos: 'PHOTOS'
+      albums: "ALBUMS"
+      followings: "FOLLOWINGS"
+      followers: "FOLLOWERS"
+      feeds: "Feeds"
+      discovery: "Discovery"
+      unfollow: "unfollow"
+      follow: "follow"
+      
+    followings:
+      editProfile: 'Edit Profile'
+      photos: 'PHOTOS'
+      albums: "ALBUMS"
+      followings: "FOLLOWINGS"
+      followers: "FOLLOWERS"
+      feeds: "Feeds"
+      discovery: "Discovery"
+      unfollow: "unfollow"
+      follow: "follow"
+    follower:
+      unfollow: "unfollow"
+      follow: "follow"
+    following:
+      unfollow: "unfollow"
+      follow: "follow"
+
+  discovery:
+    photos:
+      feeds: "Feeds"
+      discovery: "Discovery"
+      photo: "PHOTO"
+      album: "ALBUM"
+    albums: 
+      feeds: "Feeds"
+      discovery: "Discovery"
+      photo: "PHOTO"
+      album: "ALBUM"
+  
+  feed:
+    photos:
+      feeds: "Feeds"
+      discovery: "Discovery"
+      photo: "PHOTO"
+      album: "ALBUM"
+    albums:
+      feeds: "Feeds"
+      discovery: "Discovery"
+      photo: "PHOTO"
+      album: "ALBUM"
+  admin:
+    albums:
+      show:
+        managePhoto: "Manage Photos"
+        manageAlbum: "Manage Albums"
+        manageUser: "Manage Users"
+    photos:
+      show:
+        managePhoto: "Manage Photos"
+        manageAlbum: "Manage Albums"
+        manageUser: "Manage Users"
+    user:
+      show:
+        managePhoto: "Manage Photos"
+        manageAlbum: "Manage Albums"
+        manageUser: "Manage Users"  
+        firstName: "First name"
+        lastName: "Last name"
+        email: "Email"
+        last: "Last login"
+  shared:
+    header:
+      logout: "Logout"
+    headerAdmin:
+      logout: "Logout"
+    headerGuest:
+      login: "Login"
+  search: 
+    show: 
+      feeds: "Feeds"
+      discovery: "Discovery"
+      photo: "PHOTO"
+      album: "ALBUM"
+
+
+
+
+  
+
   

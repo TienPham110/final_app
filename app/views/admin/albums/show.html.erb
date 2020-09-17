@@ -18,13 +18,13 @@
             <div class="col my-1 p-0  text-center text-xl-left">
                 <div class="btn-group-toggle left_col mx-5" role="tablist">
                     <label class="btn font-weight-bold active manage" >
-                         <%=link_to 'Manage Photos', admin_photo_path, class:"text-decoration-none"%>
+                         <%=link_to t('.managePhoto'), admin_photo_path, class:"text-decoration-none"%>
                     </label> <br>
                     <label class="btn font-weight-bold manage left">    
-                        Manage Albums
+                        <%=t('.manageAlbum')%>
                     </label>
                     <label class="btn font-weight-bold manage">
-                         <%=link_to 'Manage Users', admin_user_path, class:"text-decoration-none"%>
+                         <%=link_to t('.manageUser'), admin_user_path, class:"text-decoration-none"%>
                     </label>
                 </div>          
             </div>

@@ -26,7 +26,6 @@ class PhotosController < ApplicationController
             flash.keep[:error] = "You must fill in the title and upload image less than 5Mb"
             redirect_to new_user_photo_path
         end
-
     end
 
     def edit 

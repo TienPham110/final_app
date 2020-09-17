@@ -34,16 +34,16 @@
                             <%if current_user.id == @user.id%>
                             <div class="row ">
                                 <div class="col">
-                                    <%= button_to 'Edit Profile', edit_user_registration_path, {class:"btn btn-sm btn-primary btn_edit_profile", method:'get'}%>
+                                    <%= button_to t('.editProfile'), edit_user_registration_path, {class:"btn btn-sm btn-primary btn_edit_profile", method:'get'}%>
                                 </div>
                             </div>
                             <%else%>
                                 <div class="row ">
                                 <div class="col-lg-3">
                                    <% if current_user.followings.ids.include?(@user.id)%>                                               
-                                        <%=button_to "unfollow", toggleFollow_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm  m-0 p-0 following",  method: :post%>
+                                        <%=button_to t(".unfollow"), toggleFollow_path(follow_id: @user.id, id: current_user.id), class:"btn btn-sm btn_toggle_follow m-0 p-0 following",  method: :post%>
                                     <%else%>
-                                        <%=button_to "follow", toggleFollow_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm  m-0 p-0 follow", method: :post%>              
+                                        <%=button_to t(".follow"), toggleFollow_path(follow_id: @user.id, id: current_user.id),class:"btn  btn-sm btn_toggle_follow m-0 p-0 follow", method: :post%>              
                                     <% end %>
                                 </div>
                                 </div>
@@ -53,14 +53,14 @@
                             <div class="profile-stats">
                                 <ul class="p-0 left_col">
                                 <%if current_user.id == @user.id%>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.photos.where(album_id:nil).count%></span> PHOTOS <%end%> </li>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.count%></span> ALBUMS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.photos.where(album_id:nil).count%></span>  <%=t('.photos')%> <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.count%></span>  <%=t('.albums')%> <%end%> </li>
                                 <%else%>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.photos.where(album_id:nil, shared:true).count%></span> PHOTOS <%end%> </li>
-                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.where(shared: true).count%></span> ALBUMS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_photos_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.photos.where(album_id:nil, shared:true).count%></span>  <%=t('.photos')%> <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold " ><%= link_to user_albums_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.albums.where(shared: true).count%></span> <%=t('.albums')%> <%end%> </li>
                                 <%end%>
-                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.followings.count%></span> FOLLOWINGS</li>
-                                    <li class="px-1 font-weight-bold " ><%= link_to followers_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followers.count%></span> FOLLOWERS <%end%> </li>
+                                    <li class="px-1 border-right font-weight-bold left" ><span class="profile-stat-count left"><%=@user.followings.count%></span> <%=t('.followings')%></li>
+                                    <li class="px-1 font-weight-bold " ><%= link_to followers_user_path(@user.id), style:"text-decoration: none" do%> <span class='profile-stat-count'><%=@user.followers.count%></span> <%=t('.followers')%> <%end%> </li>
                                 </ul>
                             </div>
                         </div>

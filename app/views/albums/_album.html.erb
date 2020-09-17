@@ -15,7 +15,7 @@
                                             </ul>  
                                         </div>
                                         <%if current_user.id == @user.id%>
-                                        <%=button_to 'EDIT', edit_user_album_path(id: album.id),{ class:"btn btn-sm font-weight-bold", method:"get"}%>
+                                        <%=button_to t('.edit'), edit_user_album_path(id: album.id),{ class:"btn btn-sm font-weight-bold", method:"get"}%>
                                         <%end%>
                                     </div>
                                 </div>

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dq2tboopp
+  api_key: '263137998585923'
+  api_secret: HF-GR-7C1j18ZoZu9qtgvno6Nv8
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dq2tboopp
+  api_key: '263137998585923'
+  api_secret: HF-GR-7C1j18ZoZu9qtgvno6Nv8
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dq2tboopp
+  api_key: '263137998585923'
+  api_secret: HF-GR-7C1j18ZoZu9qtgvno6Nv8
+  enhance_image_tag: true
+  static_file_support: false
