@@ -44,9 +44,9 @@ class User < ApplicationRecord
       [firstName.chars.first, lastName.chars.first].compact.join.upcase
     end
     
-    def unviewed_notifications_count # count unviewd notification
-      Notification.for_user(self.id)
-    end
+    # def unviewed_notifications_count # count unviewd notification
+    #   Notification.for_user(self.id)
+    # end
 
     private
         def create_user

@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   resources :image, only: [:destroy] 
 
   # web-socket
-  mount Sidekiq::Web => '/sidekiq'
+  # mount Sidekiq::Web => '/sidekiq'
 
-  resources :notifications, only: [:index, :update]
+  # resources :notifications, only: [:index, :update]
 end
