@@ -30,7 +30,7 @@ class User < ApplicationRecord
     validates :password, length: {in: 8..64}
 
     ####################upload avatar###################
-    mount_uploader :avatar, ImageUploader
+    mount_uploader :avatar, AvatarUploader
 
     ####################send mail#######################
     after_create :create_user

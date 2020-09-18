@@ -21,7 +21,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'
-
+gem 'cloudinary'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
