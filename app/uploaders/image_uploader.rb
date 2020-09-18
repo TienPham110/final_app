@@ -6,7 +6,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
 
-  storage :file
+  if Rails.env.development?
+    storage :file
+  else
+    include Cloudinary::CarrierWave
+  end
 
   # storage :fog
 
@@ -24,6 +28,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  def default_url(*args)
+    "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+  end
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #

@@ -4,7 +4,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
+  if Rails.env.development?
     storage :file
+  else
+    include Cloudinary::CarrierWave
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -24,9 +28,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   ActionController::Base.helpers.asset_path("default.png")
   # end
   def default_url(*args)
-    # For Rails 3.1+ asset pipeline compatibility:
-    # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-  
     "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
   # Process files as they are uploaded:
